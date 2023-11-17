@@ -11,7 +11,8 @@ list_ponctuaton = [
     '.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '<', '>', "'", '"', '/',
     '|', '@', '#', '$', '%', '^', '&', '*', '_', '+', '-', '=', '~', '`',"\n"]
 listw=[]
-with open("speeches-20231116/Nomination_Chirac1.txt","r") as f2, open("chirac123", "w") as f1:
+
+with open("speeches-20231116/Nomination_Chirac1.txt","r") as f2, open("cleaned/" + nom_fichier, "w") as f1:
     for i in f2:
         for j in i:
             if j not in list_ponctuaton:
@@ -19,10 +20,7 @@ with open("speeches-20231116/Nomination_Chirac1.txt","r") as f2, open("chirac123
             else:
                 f1.write(" ")
 
-with  open("chirac123","r") as f2:
-    for i in f2:
-        for j in i.split(" "):
-            listw.append(j)
+
 
 print(listw)
 #test5

@@ -8,6 +8,16 @@ def extraire_nom(list):
         list_nom.append(i[:j])
     return(list_nom)
 
+def ponctuation(nom_fichier):
+    with open("speeches-20231116/Nomination_Chirac1.txt","r") as f2, open("cleaned/" + nom_fichier, "w") as f1:
+        for i in f2:
+            for j in i:
+                if j not in list_ponctuaton:
+                    f1.write(j)
+                else:
+                    f1.write(" ")
+
+
 
 def TF(txt_cleaned):
     list = txt_cleaned.split(" ")
@@ -25,3 +35,4 @@ def noms_prenoms(list,dict):
     prenompres5 = ["Emmanuel", "François", "Nicolas", "Jacques", "François", "Valéry", "Georges", "Charles"]
     #nom en clé, prenom en valeur
     for i in len(prenompres5):
+
