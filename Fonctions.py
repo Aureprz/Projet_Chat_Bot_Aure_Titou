@@ -11,17 +11,17 @@ def extraire_nom(list):
 
 def TF(txt_cleaned):
     list = txt_cleaned.split(" ")
-    s = set()
+    set_words = set()
     dict_words = {}
     for i in list:
-        s.add(i)
-    dict_words = dict.fromkeys(s, 0)
-    print(dict_words)
-#   for i in list:
-#        dict.fromkeys(i, y)
- #       for j in list_fichier_cleaned:
-  #          dict_words[i] = y+1
+        set_words.add(i)
+    dict_words = dict.fromkeys(set_words, 0)
+    for i in list:
+       dict_words[i] = dict_words[i]+1
     return dict_words
 
-txt_test ="les fleurs sont bleues mais aussi bleues mais aussi rouges"
-print(TF(txt_test))
+
+def noms_prenoms(list,dict):
+    prenompres5 = ["Emmanuel", "François", "Nicolas", "Jacques", "François", "Valéry", "Georges", "Charles"]
+    #nom en clé, prenom en valeur
+    for i in len(prenompres5):
