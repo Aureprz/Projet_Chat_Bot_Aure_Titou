@@ -1,26 +1,21 @@
 import os
 from Fonctions import*
-listnom=os.listdir("speeches-20231116")
-prenompres5=["Emmanuel","François","Nicolas","Jacques","François","Valéry","Georges","Charles"]
-prenompres4=["René","Vincent"]
-prenompres3=["Albert", "Paul", "Gaston", "Alexandre", "Paul", "Raymond", "Armand", "Émile", "Félix", "Jean", "Sadi", "Jules", "Patrice", "Adolphe"]
-print(extraire_nom(listnom))
+name_list = os.listdir("speeches-20231116")
+prenompres5 = ["Emmanuel", "François", "Nicolas", "Jacques", "François", "Valéry", "Georges", "Charles"]
+prenompres4 = ["René", "Vincent"]
+prenompres3 = ["Albert", "Paul", "Gaston", "Alexandre", "Paul", "Raymond", "Armand", "Émile", "Félix", "Jean", "Sadi",
+               "Jules", "Patrice", "Adolphe"]
+print(extraire_nom(name_list))
 
-print(ord(' '))
-list_ponctuaton = [
+list_punctuation = [
     '.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '<', '>', "'", '"', '/',
-    '|', '@', '#', '$', '%', '^', '&', '*', '_', '+', '-', '=', '~', '`',"\n"]
-listw=[]
+    '|', '@', '#', '$', '%', '^', '&', '*', '_', '+', '-', '=', '~', '`', "\n"]
+list_stopword = []
 
-with open("speeches-20231116/Nomination_Chirac1.txt","r") as f2, open("cleaned/" + nom_fichier, "w") as f1:
-    for i in f2:
-        for j in i:
-            if j not in list_ponctuaton:
-                f1.write(j)
-            else:
-                f1.write(" ")
+with open("stop_words_french.txt", "r") as f1:
+    for line in f1:
+        list_stopword.append(line[:-1])
 
-
-
-print(listw)
-#test5
+punctuation("speeches-20231116", "/Nomination_Chirac1.txt", list_punctuation)
+minuscule("cleaned/Nomination_Chirac1.txt")
+stopword("cleaned/Nomination_Chirac1.txt", list_stopword)
