@@ -1,5 +1,3 @@
-from math import log
-
 
 def extraire_nom(list_names_files):
     list_nom = []
@@ -81,3 +79,11 @@ def inverse_document_frequency(list_dict_term):
         dict_words[i] = log(nb_documents/dict_words[i])
 
     return dict_words
+
+def noms_prenoms(dict_identity):
+    list1=[]
+    list_presidents=[]
+    for i in dict_identity.items():
+        list1.append(dict_identity)
+    list_presidents.append(list1)
+    return list_presidents
