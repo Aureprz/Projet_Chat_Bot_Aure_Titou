@@ -75,7 +75,7 @@ def inverse_document_frequency(list_dict_term):
 
     return dict_words
 
-def noms_prenoms(dict_identity):
+def noms_prenoms(dict_identity,list_name):
     list1=[]
     list_presidents=[]
     for i in dict_identity.items():
