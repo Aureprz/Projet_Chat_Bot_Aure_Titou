@@ -1,3 +1,5 @@
+from math import log
+
 
 def extraire_nom(list_names_files):
     list_nom = []
@@ -53,13 +55,6 @@ def term_frequency(txt_cleaned):
     for i in list_txt:
         dict_words[i] = dict_words[i]+1
     return dict_words
-
-
-def noms_prenoms():
-    prenompres5 = 1
-    # nom en clé, name en value
-    for i in prenompres5:
-        print(i)
 
 
 def inverse_document_frequency(list_dict_term):
