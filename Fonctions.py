@@ -55,8 +55,10 @@ def term_frequency(txt_cleaned):
     return dict_words
 
 
-def noms_prenoms():
-    prenompres5 = ["Emmanuel", "François", "Nicolas", "Jacques", "François", "Valéry", "Georges", "Charles"]
-    # nom en clé, name en value
-    for i in prenompres5:
-        print(i)
+def noms_prenoms(dict_identity):
+    list1=[]
+    list_presidents=[]
+    for i in dict_identity.items():
+        list1.append(dict_identity)
+    list_presidents.append(list1)
+    return list_presidents
