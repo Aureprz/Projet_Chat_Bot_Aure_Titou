@@ -1,23 +1,26 @@
 from math import log
 
 
+# fonction permettant l'extraction du nom de chaque fichier (discours)
 def extraire_nom(list_names_files):
     list_nom = []
     for i in list_names_files:
         i = i.split("_")[1]
         j = 0
+        # Enlève la partie "Nomination_" et le ".txt" de chaque nom de fichier
         while 'a' <= i[j] <= 'z' or 'A' <= i[j] <= 'Z' or i[j] == ' ':
             j += 1
         list_nom.append(i[:j])
     return list_nom
 
 
-def punctuation(nom_dossier, file_name, list_punctuation):
+# fonction supprimant chaque élément de ponctuation, tels que les virgules ou les tirets, des fichiers
+def ponctuation(nom_dossier, file_name, list_ponctuation):
     with open(nom_dossier + file_name, "r") as f1, open("cleaned/" + file_name, "w") as f2:
         text = ""
         for i in f1:
             for j in i:
-                if j not in list_punctuation:
+                if j not in list_ponctuation:
                     text += j
                 else:
                     text += " "
@@ -25,6 +28,7 @@ def punctuation(nom_dossier, file_name, list_punctuation):
         f2.write(text)
 
 
+# fonction permettant d'enlever les mots apparaissant trop souvent (définis par une liste prédéfinie)
 def stopword(file_name, list_stopword):
     text_c = []
     with open(file_name, "r") as f1:
@@ -37,6 +41,7 @@ def stopword(file_name, list_stopword):
         f1.write(text_c)
 
 
+# fonction transformant le texte de chaque fichier en lettres minuscules
 def minuscule(file_name):
     with open(file_name, "r") as f1:
         txt = f1.readline()
@@ -46,6 +51,7 @@ def minuscule(file_name):
         f1.write(txt)
 
 
+# fonction TF calculant la fréquence d'apparition d'un terme dans tel fichier
 def term_frequency(txt_cleaned):
     list_txt = txt_cleaned.split(" ")
     set_words = set()
@@ -57,8 +63,8 @@ def term_frequency(txt_cleaned):
     return dict_words
 
 
+# fonction IDF calculant l'importance d'un terme à travers l'ensemble des fichiers existants
 def inverse_document_frequency(list_dict_term):
-
     dict_set = set()
     for dict_term in list_dict_term:
         for word in dict_term.keys():
@@ -67,18 +73,19 @@ def inverse_document_frequency(list_dict_term):
     dict_words = dict.fromkeys(dict_set, 0)
     for dict_term in list_dict_term:
         for word in dict_term.keys():
-            dict_words[word] = dict_words[word]+1
+            dict_words[word] = dict_words[word] + 1
 
     nb_documents = len(list_dict_term)
     for i in dict_words:
-        dict_words[i] = log(nb_documents/dict_words[i])
+        dict_words[i] = log(nb_documents / dict_words[i])
 
     return dict_words
 
-def noms_prenoms(dict_identity,list_name):
-    list1=[]
-    list_presidents=[]
-    for i in dict_identity.items():
-        list1.append(dict_identity)
+
+# fonction donnant la liste des nom et prénom associé à chaque président
+def noms_prenoms(dict_identity):
+    list1 = []
+    list_presidents = []
+    list1.append(dict_identity)
     list_presidents.append(list1)
     return list_presidents
