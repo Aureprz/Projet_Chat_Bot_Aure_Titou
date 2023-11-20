@@ -6,9 +6,10 @@ import os
 def extraire_nom(list_names_files):
     list_nom = []
     for i in list_names_files:
+        # Enlève "Nomination_"
         i = i.split("_")[1]
         j = 0
-        # Enlève la partie "Nomination_" et le ".txt" de chaque nom de fichier
+        # Enlève ".txt"
         while 'a' <= i[j] <= 'z' or 'A' <= i[j] <= 'Z' or i[j] == ' ':
             j += 1
         list_nom.append(i[:j])
