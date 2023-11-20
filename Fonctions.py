@@ -1,4 +1,5 @@
 from math import log
+import os
 
 
 # fonction permettant l'extraction du nom de chaque fichier (discours)
@@ -15,12 +16,12 @@ def extraire_nom(list_names_files):
 
 
 # fonction supprimant chaque élément de ponctuation, tels que les virgules ou les tirets, des fichiers
-def ponctuation(nom_dossier, file_name, list_ponctuation):
-    with open(nom_dossier + file_name, "r") as f1, open("cleaned/" + file_name, "w") as f2:
+def punctuation(starting_directory, end_directory, file_name, list_punctuation):
+    with open(starting_directory + file_name, "r") as f1, open(end_directory + file_name, "w") as f2:
         text = ""
         for i in f1:
             for j in i:
-                if j not in list_ponctuation:
+                if j not in list_punctuation:
                     text += j
                 else:
                     text += " "
@@ -89,3 +90,11 @@ def noms_prenoms(dict_identity):
     list1.append(dict_identity)
     list_presidents.append(list1)
     return list_presidents
+
+
+def list_of_files(directory, extension):
+    files_names = []
+    for filename in os.listdir(directory):
+        if filename.endswith(extension):
+            files_names.append(filename)
+    return files_names
