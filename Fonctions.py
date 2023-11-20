@@ -58,6 +58,7 @@ def term_frequency(txt_cleaned):
     set_words = set()
     for i in list_txt:
         set_words.add(i)
+
     dict_words = dict.fromkeys(set_words, 0)
     for i in list_txt:
         dict_words[i] = dict_words[i]+1
@@ -85,10 +86,8 @@ def inverse_document_frequency(list_dict_term):
 
 # fonction donnant la liste des nom et prénom associé à chaque président
 def noms_prenoms(dict_identity, list_noms):
-    dict_presidents = {}
-    for i in set(extraire_nom(list_noms)):
-        if i in dict_identity.keys():
-            dict_presidents = dict.fromkeys(i, dict_identity[i])
+    list_noms = list(set(list_noms))
+    dict_presidents = {i: dict_identity[i] for i in list_noms}
     return dict_presidents
 
 

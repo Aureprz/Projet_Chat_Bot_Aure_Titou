@@ -48,5 +48,5 @@ with open("stop_words_french.txt", "r") as f1:
     for line in f1:
         list_stopword.append(line[:-1])
 
-print(extraire_nom(list_files_names))
-print(noms_prenoms(dict_pres["p5"], list_files_names))
+name=(extraire_nom(list_files_names))
+print(noms_prenoms(dict_pres["p5"], name))
