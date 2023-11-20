@@ -1,8 +1,14 @@
+########################################################
+##### My first Chatbot (Part 1) ########################
+##### Auteurs : Aurélien Perez et Titouan Lenain ########
+##### Version : V 0.1 ##################################
+########################################################
+
 ########################################################################################################################
 # importing external functions
 ########################################################################################################################
-import os
-from Fonctions import*
+# import os
+from Fonctions import *
 
 ########################################################################################################################
 # VARIABLES
@@ -24,6 +30,7 @@ dict_pres = {"p5": {"Macron": "Emmanuel", "Hollande": "François", "Sarkozy": "N
                     "Faure": "Félix", "Casimir-Perier": "Jean", "Carnot": "Sadi", "Grévy": "Jules",
                     "de Mac Mahon": "Patrice", "Thiers": "Adolphe"}}
 
+
 # list of punctuation sign
 list_punctuation = [
                     '.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '<', '>', "'", '"', '/',
@@ -41,6 +48,5 @@ with open("stop_words_french.txt", "r") as f1:
     for line in f1:
         list_stopword.append(line[:-1])
 
-punctuation(directory_base, directory_clear, "/Nomination_Chirac1.txt", list_punctuation)
-minuscule("cleaned/Nomination_Chirac1.txt")
-stopword("cleaned/Nomination_Chirac1.txt", list_stopword)
+print(extraire_nom(list_files_names))
+print(noms_prenoms(dict_pres["p5"], list_files_names))

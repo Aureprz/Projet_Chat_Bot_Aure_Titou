@@ -84,12 +84,12 @@ def inverse_document_frequency(list_dict_term):
 
 
 # fonction donnant la liste des nom et prénom associé à chaque président
-def noms_prenoms(dict_identity):
-    list1 = []
-    list_presidents = []
-    list1.append(dict_identity)
-    list_presidents.append(list1)
-    return list_presidents
+def noms_prenoms(dict_identity, list_noms):
+    dict_presidents = {}
+    for i in set(extraire_nom(list_noms)):
+        if i in dict_identity.keys():
+            dict_presidents = dict.fromkeys(i, dict_identity[i])
+    return dict_presidents
 
 
 def list_of_files(directory, extension):
