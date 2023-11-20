@@ -1,4 +1,4 @@
-from math import log
+from math import log10
 import os
 
 
@@ -79,7 +79,7 @@ def inverse_document_frequency(list_dict_term):
 
     nb_documents = len(list_dict_term)
     for i in dict_words:
-        dict_words[i] = log(nb_documents / dict_words[i])
+        dict_words[i] = log10((nb_documents / dict_words[i])+1)
 
     return dict_words
 
