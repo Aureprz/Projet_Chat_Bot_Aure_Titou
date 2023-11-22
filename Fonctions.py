@@ -4,15 +4,15 @@ import os
 
 # fonction permettant l'extraction du nom de chaque fichier (discours)
 def extraire_nom(list_names_files):
-    list_nom = []
+    list_nom = set()
     for file_name in list_names_files:
         # Enlève "Nomination_" et ".txt"
         name = file_name.split("_")[1].split(".txt")[0]
         j = len(name)-1
         while not (name[j].isalpha() or name[j].isspace()):
             j -= 1
-        list_nom.append(name[:j+1])
-    return list_nom
+        list_nom.add(name[:j+1])
+    return list(list_nom)
 
 
 # fonction supprimant chaque élément de ponctuation, tels que les virgules ou les tirets, des fichiers
