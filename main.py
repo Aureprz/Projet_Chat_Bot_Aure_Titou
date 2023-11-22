@@ -44,6 +44,7 @@ list_stopword = []
 # MAIN PROGRAM
 ########################################################################################################################
 # recover the stop words list in the folder
+print(list_of_files(directory_base, ".txt"))
 with open("stop_words_french.txt", "r") as f1:
     for line in f1:
         list_stopword.append(line[:-1])

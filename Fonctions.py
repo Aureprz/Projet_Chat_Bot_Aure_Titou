@@ -45,9 +45,9 @@ def stopword(file_name, list_stopword):
 # fonction transformant le texte de chaque fichier en lettres minuscules
 def minuscule(file_name):
     with open(file_name, "r") as f1:
-        txt = f1.readline()
-    for i in range(65, 91):
-        txt = txt.replace(chr(i), chr(i+32))
+        txt = f1.read()
+    translation_table = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
+    txt = txt.translate(translation_table)
     with open(file_name, "w") as f1:
         f1.write(txt)
 
