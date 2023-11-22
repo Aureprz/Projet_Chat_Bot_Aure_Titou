@@ -5,14 +5,13 @@ import os
 # fonction permettant l'extraction du nom de chaque fichier (discours)
 def extraire_nom(list_names_files):
     list_nom = []
-    for i in list_names_files:
-        # Enlève "Nomination_"
-        i = i.split("_")[1]
-        j = 0
-        # Enlève ".txt"
-        while 'a' <= i[j] <= 'z' or 'A' <= i[j] <= 'Z' or i[j] == ' ':
-            j += 1
-        list_nom.append(i[:j])
+    for file_name in list_names_files:
+        # Enlève "Nomination_" et ".txt"
+        name = file_name.split("_")[1].split(".txt")[0]
+        j = len(name)-1
+        while not (name[j].isalpha() or name[j].isspace()):
+            j -= 1
+        list_nom.append(name[:j+1])
     return list_nom
 
 
