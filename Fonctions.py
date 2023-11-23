@@ -18,14 +18,10 @@ def extraire_nom(list_names_files):
 # fonction supprimant chaque élément de ponctuation, tels que les virgules ou les tirets, des fichiers
 def punctuation(starting_directory, end_directory, file_name, list_punctuation):
     with open(starting_directory + file_name, "r") as f1, open(end_directory + file_name, "w") as f2:
-        text = ""
-        for i in f1:
-            for j in i:
-                if j not in list_punctuation:
-                    text += j
-                else:
-                    text += " "
-        text = (" ".join(text.split()))
+        text = f1.read()
+        for char in list_punctuation:
+            text = text.replace(char, " ")
+        text = " ".join(text.split())
         f2.write(text)
 
 
@@ -86,7 +82,6 @@ def inverse_document_frequency(list_dict_term):
 
 # fonction donnant la liste des nom et prénom associé à chaque président
 def noms_prenoms(dict_identity, list_noms):
-    list_noms = list(set(list_noms))
     dict_presidents = {i: dict_identity[i] for i in list_noms}
     return dict_presidents
 
