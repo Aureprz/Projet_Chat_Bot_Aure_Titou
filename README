@@ -1,0 +1,12 @@
+Hi. If you're reading this, you probably already know what this program is about. It's a project we have in our first
+semester at Efrei Paris and is kind of a Chatbot. This program's just about the first part of the whole project
+(out of 3). Without further ado, here's what the Chatbot can do in this part :
+
+- Out of a certain amount of files (text files), here these are French presidents' speeches, you can choose one
+of all of them and get the TF-IDF measure for all the words in the file. Also, if you wish to do so, you can get the
+TF-IDF of all the words the txt files' directory.
+
+- If you're more interested in something more specific, the Chatbot can either give you the "less relevant" words
+(TF-IDF = 0) out of all the files, the rarest ones or the ones the president you chose use frequently.
+
+-
