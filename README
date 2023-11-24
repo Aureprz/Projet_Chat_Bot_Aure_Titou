@@ -1,12 +1,37 @@
+########################################################################################################################
+# English
+########################################################################################################################
 Hi. If you're reading this, you probably already know what this program is about. It's a project we have in our first
 semester at Efrei Paris and is kind of a Chatbot. This program's just about the first part of the whole project
 (out of 3). Without further ado, here's what the Chatbot can do in this part :
 
-- Out of a certain amount of files (text files), here these are French presidents' speeches, you can choose one
-of all of them and get the TF-IDF measure for all the words in the file. Also, if you wish to do so, you can get the
-TF-IDF of all the words the txt files' directory.
+- Out of a certain amount of files (text files), here these are French presidents' speeches, you can choose one of them
+and get the term frequency for all the words in the file. Also, if you wish to do so, you can get the TF-IDF measure of
+all the words the txt files' directory.
 
 - If you're more interested in something more specific, the Chatbot can either give you the "less relevant" words
 (TF-IDF = 0) out of all the files, the rarest ones or the ones the president you chose use frequently.
 
--
+- Furthermore, the Chatbot can give you the presidents who use which word in their speech(es)
+
+
+
+########################################################################################################################
+# Français
+########################################################################################################################
+Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. C'est un projet que nous avons dans notre
+premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du projet
+(sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut faire :
+
+Parmi un certain nombre de fichiers (fichiers texte), ici les discours de présidents français, vous pouvez en choisir
+un et obtenir le nombre d'occurences de chaque mot dans ce fichier à l'aide de la fonction term_frequency.
+de tous et obtenir la mesure TF-IDF pour tous les mots du fichier. De même, si vous le souhaitez, vous pouvez obtenir le
+TF-IDF de tous les mots du répertoire des fichiers txt.
+
+- Si vous êtes plus intéressé par quelque chose de plus précis, le Chatbot peut vous donner les mots les moins
+pertinents (TF-IDF = 0) de tous les fichiers, soit les plus rares, soit ceux que le président choisi utilise
+fréquemment.
+
+- De plus, le Chatbot peut vous donner les présidents qui ont, pour point commun, tous utilisé le mot de votre choix
+dans leur(s) discours.
+

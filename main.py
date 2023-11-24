@@ -44,10 +44,20 @@ list_stopword = []
 # MAIN PROGRAM
 ########################################################################################################################
 # recover the stop words list in the folder
+
 print(list_of_files(directory_base, ".txt"))
 with open("stop_words_french.txt", "r") as f1:
     for line in f1:
         list_stopword.append(line[:-1])
 
-name = (extraire_nom(list_files_names))
-print(noms_prenoms(dict_pres["p5"], name))
+
+N = "Stop"
+while N != noms_prenoms(dict_pres["p5"], name).keys() or N != noms_prenoms(dict_pres["p5"], name).values():
+    print("Hi. Welcome to this program. What can I do for you ?")
+    print("1. Give you the term frequency of each word in a certain file.")
+    print("2. Letting you know the words a president use a lot.")
+    print("3. Which words every president in this list use ?")
+    N = input()
+    if N = 1 :
+        print("Choose a president in the dictionary below (name or first name, either way is fine) :")
+        print(noms_prenoms(dict_pres["p5"], name))
