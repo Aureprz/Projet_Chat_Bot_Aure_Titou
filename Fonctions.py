@@ -49,35 +49,25 @@ def minuscule(file_name):
 
 
 # TF function calculating the frequency of occurrence of a term in such file
-def term_frequency(txt_cleaned):
-    list_txt = txt_cleaned.split(" ")
-    set_words = set()
+def term_frequency(name_files_cleaned, dict_word):
+    with open(name_files_cleaned, "r") as f1:
+        list_txt = f1.read().split(" ")
     for i in list_txt:
-        set_words.add(i)
-
-    dict_words = dict.fromkeys(set_words, 0)
-    for i in list_txt:
-        dict_words[i] = dict_words[i]+1
-    return dict_words
+        dict_word[i] = dict_word[i]+1
+    return dict_word
 
 
 # IDF function calculating the importance of a term across all existing files
-def inverse_document_frequency(list_dict_term):
-    dict_set = set()
+def inverse_document_frequency(list_dict_term, dict_word):
     for dict_term in list_dict_term:
         for word in dict_term.keys():
-            dict_set.add(word)
-
-    dict_words = dict.fromkeys(dict_set, 0)
-    for dict_term in list_dict_term:
-        for word in dict_term.keys():
-            dict_words[word] = dict_words[word] + 1
+            dict_word[word] = dict_word[word] + 1
 
     nb_documents = len(list_dict_term)
-    for i in dict_words:
-        dict_words[i] = log10((nb_documents / dict_words[i])+1)
+    for i in dict_word:
+        dict_word[i] = log10((nb_documents / dict_word[i]) + 1)
 
-    return dict_words
+    return dict_word
 
 
 # function giving the list of first and last names associated with each president
@@ -98,3 +88,13 @@ def list_of_files(directory, extension):
 def tf_idf(dic_tf, idf):
     dic_tf_idf = {i: {j: dic_tf[i][j] * idf[j] for j in dic_tf[i].keys()} for i in dic_tf.keys()}
     return dic_tf_idf
+
+
+def dict_words(list_path_files):
+    list_txt = []
+    for path_files in list_path_files:
+        with open(path_files, "r") as f1:
+            list_txt += f1.read().split(" ")
+    set_words = set(list_txt)
+    dict_word = dict.fromkeys(set_words, 0)
+    return dict_word
