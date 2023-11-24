@@ -1,7 +1,7 @@
 ########################################################
 # My first Chatbot (Part 1)                       ######
 # Auteurs : Aurélien Perez et Titouan Lenain      ######
-# Version : V 0.6                                 ######
+# Version : V 0.7                                 ######
 ########################################################
 
 ########################################################################################################################
@@ -14,8 +14,8 @@ from Fonctions import *
 # VARIABLES
 ########################################################################################################################
 # directory containing all the files to analyze
-directory_base = "./speeches-20231116"
-directory_clear = "./cleaned"
+directory_base = os.path.realpath("./speeches-20231116")
+directory_clear = os.path.realpath("./cleaned")
 
 # list of file names
 list_files_names = list_of_files(directory_base, "txt")

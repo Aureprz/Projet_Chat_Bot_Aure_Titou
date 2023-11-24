@@ -16,35 +16,34 @@ def extraire_nom(list_names_files):
 
 
 # function removing each punctuation element, such as commas or hyphens, from files
-def punctuation(starting_directory, end_directory, file_name, list_punctuation):
-    with open(starting_directory + file_name, "r") as f1, open(end_directory + file_name, "w") as f2:
-        text = f1.read()
-        for char in list_punctuation:
-            text = text.replace(char, " ")
-        text = " ".join(text.split())
-        f2.write(text)
+def punctuation(file_path, list_punctuation):
+    with open(file_path, "r") as f1:
+        txt = f1.read()
+        translation_table = str.maketrans(list_punctuation, " " * len(list_punctuation))
+        txt = txt.translate(translation_table)
+        txt = " ".join(txt.split())
+
+    with open(file_path, "w") as f1:
+        f1.write(txt)
 
 
 # function to remove words that appear too often (defined by a predefined list)
-def stopword(file_name, list_stopword):
+def stopword(file_path, list_stopword):
     text_c = []
-    with open(file_name, "r") as f1:
+    with open(file_path, "r") as f1:
         text = f1.readline().split()
-        for i in text:
-            if i not in list_stopword:
-                text_c.append(i)
-        text_c = (" ".join(text_c))
-    with open(file_name, "w") as f1:
+        text_c = " ".join(word for word in text if word not in list_stopword)
+    with open(file_path, "w") as f1:
         f1.write(text_c)
 
 
 # function transforming the text of each file into lowercase letters
-def minuscule(file_name):
-    with open(file_name, "r") as f1:
+def minuscule(file_path):
+    with open(file_path, "r") as f1:
         txt = f1.read()
     translation_table = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
     txt = txt.translate(translation_table)
-    with open(file_name, "w") as f1:
+    with open(file_path, "w") as f1:
         f1.write(txt)
 
 
@@ -82,6 +81,12 @@ def list_of_files(directory, extension):
         if filename.endswith(extension):
             files_names.append(filename)
     return files_names
+
+
+def copy_directory(directory1, directory2):
+    for files in os.listdir(directory1):
+        with open(files, "r") as f1, open(os.path.join(directory2, files), "w") as f2:
+            f2.write(f1.read())
 
 
 # verifier tf_idf
