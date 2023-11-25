@@ -17,6 +17,7 @@ def extraire_nom(list_names_files):
 
 def punctuation(file_path, list_punctuation):
     """ function removing each punctuation element, such as commas or hyphens, from files"""
+    list_punctuation = "".join(list_punctuation)
     with open(file_path, "r") as f1:
         txt = f1.read()
         translation_table = str.maketrans(list_punctuation, " " * len(list_punctuation))
@@ -47,9 +48,9 @@ def minuscule(file_path):
         f1.write(txt)
 
 
-def term_frequency(name_files_cleaned, dict_word):
+def term_frequency(name_file_cleaned, dict_word):
     """TF function calculating the frequency of occurrence of a term in such file"""
-    with open(name_files_cleaned, "r") as f1:
+    with open(name_file_cleaned, "r") as f1:
         list_txt = f1.read().split(" ")
     for i in list_txt:
         dict_word[i] = dict_word[i]+1
@@ -84,9 +85,12 @@ def list_of_files(directory, extension):
 
 
 def copy_directory(directory1, directory2):
+    list_directory2 = []
     for files in os.listdir(directory1):
-        with open(files, "r") as f1, open(os.path.join(directory2, files), "w") as f2:
+        with open(os.path.join(directory1, files), "r") as f1, open(os.path.join(directory2, files), "w") as f2:
             f2.write(f1.read())
+            list_directory2.append(os.path.join(directory2, files))
+        return list_directory2
 
 
 def tf_idf(dic_tf, idf):
@@ -103,3 +107,4 @@ def dict_words(list_path_files):
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
+

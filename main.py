@@ -1,7 +1,7 @@
 ########################################################
 # My first Chatbot (Part 1)                       ######
 # Auteurs : Aurélien Perez et Titouan Lenain      ######
-# Version : V 0.7                                 ######
+# Version : V 0.8                                 ######
 ########################################################
 
 ########################################################################################################################
@@ -20,6 +20,9 @@ directory_clear = os.path.realpath("./cleaned")
 # list of file names
 list_files_names = list_of_files(directory_base, "txt")
 
+# list of president names
+pres_names = extraire_nom(list_files_names)
+
 # dictionary of president dictionary based on the current republic
 dict_pres = {"p5": {"Macron": "Emmanuel", "Hollande": "François", "Sarkozy": "Nicolas", "Chirac": "Jacques",
                     "Mitterrand": "François", "Giscard dEstaing": "Valéry", "Pompidou": "Georges",
@@ -30,6 +33,8 @@ dict_pres = {"p5": {"Macron": "Emmanuel", "Hollande": "François", "Sarkozy": "N
                     "Faure": "Félix", "Casimir-Perier": "Jean", "Carnot": "Sadi", "Grévy": "Jules",
                     "de Mac Mahon": "Patrice", "Thiers": "Adolphe"}}
 
+# dictionaire de dictionaire tf
+dict_dict_TF = {}
 
 # list of punctuation sign
 list_punctuation = [
@@ -45,20 +50,35 @@ list_stopword = []
 ########################################################################################################################
 # recover the stop words list in the folder
 
-print(list_of_files(directory_base, ".txt"))
+
 with open("stop_words_french.txt", "r") as f1:
     for line in f1:
         list_stopword.append(line[:-1])
 
+# clear files
+list_files_path = copy_directory(directory_base, directory_clear)
+for i in list_files_path:
+    minuscule(i)
+    punctuation(i, list_punctuation)
 
-N = 35
-while (N > 57) or (N < 48) :
+# create TF-IDF
+dic_words = dict_words(list_files_path)
+for file_path in list_files_path:
+    dict_dict_TF[file_path] = term_frequency(file_path, dic_words)
+dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
+TF_IDF = tf_idf(dict_dict_TF, dic_if)
+
+N = -1
+while (N > 9) or (N < 0):
     print("Hi. Welcome to this program. What can I do for you ?")
     print("1. Give you the term frequency of each word in a certain file.")
     print("2. Letting you know the words a president use a lot.")
     print("3. Which words every president in this list use ?")
-    N = input()
+    N = int(input())
 
 if N == 1:
-    print("Choose a president in the dictionary below (name or first name, either way is fine) :")
-    print(noms_prenoms(dict_pres["p5"], name))
+    print("Choose a president in the dictionary below (number) :")
+    dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
+    for i, j in enumerate(dic_pres):
+        print(i, j, dic_pres[j], end="  ")
+    input()
