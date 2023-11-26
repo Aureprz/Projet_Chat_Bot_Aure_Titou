@@ -168,7 +168,7 @@ def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interv
                 valeur[file][k] = val
     else:
         print("an error has occurred")
-    valeur_f = valeur
+    valeur_f = deref_dic_dic(valeur)
     for name in valeur:
         for word_v, val in valeur[name].items():
             if word_v not in word:
@@ -211,3 +211,12 @@ def choose_interval():
             print("Valeur inccorrecte")
     interval = [a, b]
     return interval
+
+
+def deref_dic_dic(dic_dic):
+    dic_dic_2 = {}
+    for dic in dic_dic:
+        dic_dic_2[dic] = {}
+        for k, val in dic_dic_2[dic].items():
+            dic_dic_2[dic][k] = val
+    return dic_dic_2

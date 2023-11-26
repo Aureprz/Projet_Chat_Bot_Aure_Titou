@@ -72,7 +72,7 @@ TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
 #
 type_value = "tf"
-word = dic_words
+word = dic_words.keys()
 files = list_files_names
 interval = [0, 100]
 
