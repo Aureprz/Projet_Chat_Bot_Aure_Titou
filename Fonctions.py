@@ -6,7 +6,7 @@ def extraire_nom(list_names_files):
     """function to extract the name of each file (speech)"""
     list_nom = []
     for file_name in list_names_files:
-        # Remove "Nomination_" et ".txt"
+        # Remove "Nomination_" and ".txt"
         name = file_name.split("_")[1].split(".txt")[0]
         j = len(name)-1
         while not (name[j].isalpha() or name[j].isspace()):
@@ -29,8 +29,7 @@ def punctuation(file_path, list_punctuation):
 
 
 def stopword(file_path, list_stopword):
-    """function to remove words that appear too often (defined by a predefined list)"""
-    text_c = []
+    """function to remove words that appear too often (defined by a predefined list called list_stopword)"""
     with open(file_path, "r", encoding='utf-8') as f1:
         text = f1.readline().split()
         text_c = " ".join(word for word in text if word not in list_stopword)
@@ -79,6 +78,7 @@ def noms_prenoms(dict_identity, list_noms):
 
 
 def list_of_files(directory, extension):
+    """function that returns each file name entirely in the form of a list"""
     files_names = []
     for filename in os.listdir(directory):
         if filename.endswith(extension):
@@ -97,12 +97,13 @@ def copy_directory(directory1, directory2):
 
 
 def tf_idf(dic_tf, idf):
-    """verifier tf_idf"""
+    """function giving us the TF-IDF matrix for all the words in the files"""
     dic_tf_idf = {i: {j: dic_tf[i][j] * idf[j] for j in dic_tf[i].keys()} for i in dic_tf.keys()}
     return dic_tf_idf
 
 
 def dict_words(list_path_files):
+    """function that returns a dictionary of each word, in a single copy, with a null value"""
     list_txt = []
     for path_files in list_path_files:
         with open(path_files, "r", encoding='utf-8') as f1:
@@ -113,7 +114,7 @@ def dict_words(list_path_files):
 
 
 def choose_word(dic_words):
-    word = input("Choose a word or //0 for all words :\n")
+    word = input("Choose a word (or //0 for all words) :\n")
     if word == "//0":
         return dic_words.keys
     if word not in dic_words.keys():
@@ -167,7 +168,7 @@ def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interv
             for (k, val) in dict_tf_idf[file].items():
                 valeur[file][k] = val
     else:
-        print("an error has occurred")
+        print("An error has occurred.")
     valeur_f = deref_dic_dic(valeur)
     for name in valeur:
         for word_v, val in valeur[name].items():
@@ -190,7 +191,7 @@ def choose_type():
     answer = 0
     types = ["tf", "idf", "tf-idf"]
     while not (1 <= answer <= 3):
-        print("choisi le type de resultat:\n1: for terme-frenquence\n2: for inverse document frenquence\n3: for tf-idf")
+        print("Choose the result type :\n1 : For term frequency\n2 : For inverse document frequency\n3 : For TF-IDF")
         answer = int(input())
     return types[answer-1]
 
