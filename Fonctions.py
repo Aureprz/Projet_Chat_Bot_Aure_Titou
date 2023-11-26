@@ -115,17 +115,39 @@ def dict_words(list_path_files):
 def choose_word(dic_words):
     word = input("Choose a word :")
     if word not in dic_words():
-        print("Word not present in any of the files. Please choose another one.")
+        print("Word not present in any of the files.")
     else:
-        return word
+        words = [word]
+        return words
 
-def find_word(directory, word):
-    files = [i for i in os.listdir(dossier) if fichier.endswith('.txt')]
+def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
+    answer = "%nul%"
+    while answer not in pres_names:
+        print("Choose a president in the dictionary below (name) or zero for all :")
+        dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
+        for j in dic_pres:
+            print(j, dic_pres[j], end="  ")
+        print()
+        answer = input()
+        if answer == "0":
+            return list_files_names
+    key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
+        if len(key_list) > 1:
+            answer = 0
+            while  not (0 < answer < len(key_list)):
+                print("Be sure to select a specific file :")
+                for i, j in enumerate(key_list):
+                    print(i, j, end="  ")
+                    print()
+                answer = int(input())
+            key_list = key_list[answer]
+        return key_list
 
-def reponse(type_value, word="all", files, dict_dict_tf, dict_idf, dict_TF_IDF):
+
+def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf):
     valeur = {}
     if type_value == "tf":
-        for file in  files:
+        for file in files:
             for (k, val) in dict_dict_tf[file].items():
                 valeur[file].add(k, val)
 
@@ -135,15 +157,15 @@ def reponse(type_value, word="all", files, dict_dict_tf, dict_idf, dict_TF_IDF):
                 valeur["idf"].add(word_if, val)
 
     elif type_value == "tf-idf":
-        for file in  files:
-            for (k, val) in dict_TF_IDF[file].items():
+        for file in files:
+            for (k, val) in dict_tf_idf[file].items():
                 valeur[file].add(k, val)
     else:
         print("an error has occurred")
 
     for i in valeur:
-        print(i,end=":\n")
+        print(i, end=":\n")
         for word_v, val in valeur[i].items():
-            print(str(word_v)+": ",val)
+            print(str(word_v)+": ", val)
         print()
     print()
