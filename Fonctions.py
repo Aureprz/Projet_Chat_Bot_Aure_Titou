@@ -127,13 +127,13 @@ def choose_word(dic_words):
 def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
     answer = "%nul%"
     while answer not in pres_names:
-        print("Choose a president in the dictionary below (name) or zero for all :")
+        print("Choose a president in the dictionary below (name) or '//0' for all :")
         dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
         for j in dic_pres:
             print(j, dic_pres[j], end="  ")
         print()
         answer = input()
-        if answer == "0":
+        if answer == "//0":
             return list_files_names
     key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
     if len(key_list) > 1:
