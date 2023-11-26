@@ -145,7 +145,8 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
                 print()
             answer = int(input())
         key_list = key_list[answer]
-    return key_list
+    file = [key_list]
+    return file
 
 
 def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval):
@@ -174,6 +175,7 @@ def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interv
         for word_v, val in valeur[name].items():
             if word_v not in word:
                 del valeur_f[name][word_v]
+    valeur = deref_dic_dic(valeur_f)
     for name in valeur:
         for word_v, val in valeur[name].items():
             if not(interval[0] <= val <= interval[1]):
@@ -218,6 +220,6 @@ def deref_dic_dic(dic_dic):
     dic_dic_2 = {}
     for dic in dic_dic:
         dic_dic_2[dic] = {}
-        for k, val in dic_dic_2[dic].items():
+        for k, val in dic_dic[dic].items():
             dic_dic_2[dic][k] = val
     return dic_dic_2

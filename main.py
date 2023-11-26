@@ -72,29 +72,32 @@ TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
 #
 type_value = "tf"
-word = dic_words
+word = dic_words.keys()
 files = list_files_names
 interval = [0, 100]
 
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
-
+    print("0. parameters")
     print("1. Select a type of value")
     print("2. Select a file")
-    print("3. Pick an interval")
+    print("3. select word")
+    print("4. Pick an interval")
     print("5. Reply result")
     answer = input()
 
     if answer == "1":
         type_value = choose_type()
-    if answer == "2":
+    elif answer == "0":
+        print("type_value=", type_value, "\nfichier=", files, "\nword=", word, "\ninterval=", interval, "\n" * 2)
+    elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
-    if answer == "3":
+    elif answer == "3":
         word = choose_word(dic_words)
-    if answer == "4":
+    elif answer == "4":
         interval = choose_interval()
-    if answer == "5":
+    elif answer == "5":
         reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
     else:
         print("Answer not defined.")
