@@ -86,25 +86,31 @@ while True:
                 print(j, dic_pres[j], end="  ")
             print()
             reponse = input()
-            while reponse != "<":
-                key_list = [k for (k, val) in dict_pres_files.items() if val == reponse]
-                if len(key_list) > 1:
-                    print("Be sure to select a file")
-                    for i, j in enumerate(key_list):
-                        print(i, j, end="  ")
-                        print()
-                    reponse = int(input())
-                    key_list = key_list[reponse]
-                key_list = "".join(key_list)
-                print(key_list)
-                v = dict_dict_TF[key_list]
+            if reponse != "<":
+                name_chosen = reponse
                 while reponse != "<":
-                    reponse = input("score mini:")
-                    if reponse!="<":
-                        for (k, val) in v.items():
-                            if val > int(reponse):
-                                print(k + ":", val, end="  ")
-                    print()
+                    key_list = [k for (k, val) in dict_pres_files.items() if val == name_chosen]
+                    if len(key_list) > 1:
+                        print("Be sure to select a file")
+                        for i, j in enumerate(key_list):
+                            print(i, j, end="  ")
+                            print()
+                        reponse = input()
+                        if reponse != "<":
+                            key_list = key_list[int(reponse)]
+                    if reponse != "<":
+                        key_list = "".join(key_list)
+                        print(key_list)
+                        v = dict_dict_TF[key_list]
+                        while reponse != "<":
+                            reponse = input("score mini:")
+                            if reponse != "<":
+                                for (k, val) in v.items():
+                                    if val > int(reponse):
+                                        print(k + ":", val, end="  ")
+                                print()
+                        reponse = ""
+                reponse = ""
 
         if reponse == "2":
             print()
