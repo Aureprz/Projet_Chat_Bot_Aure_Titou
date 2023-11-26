@@ -48,6 +48,10 @@ list_punctuation = [
 # list of stopword (not important word)
 list_stopword = []
 
+#
+type_value = ""
+word = ""
+files = ""
 ########################################################################################################################
 # MAIN PROGRAM
 ########################################################################################################################
@@ -80,51 +84,14 @@ while True:
     answer = input()
 
     if answer == "1":
-        while answer != "<":
-            print("Choose a president in the dictionary below (name) :")
-            dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
-            for j in dic_pres:
-                print(j, dic_pres[j], end="  ")
-            print()
-            answer = input()
-            if answer != "<":
-                name_chosen = answer
-                while answer != "<":
-                    key_list = [k for (k, val) in dict_pres_files.items() if val == name_chosen]
-                    if len(key_list) > 1:
-                        print("Be sure to select a specific file :")
-                        for i, j in enumerate(key_list):
-                            print(i, j, end="  ")
-                            print()
-                        answer = input()
-                        if answer != "<":
-                            key_list = key_list[int(answer)]
-                    if answer != "<":
-                        if answer != ("<" or ""):
-                            key_list = "".join(key_list)
-                            print(key_list)
-                            v = dict_dict_TF[key_list]
-                            while answer != "<" or answer < "0":
-                                answer = input("Enter a minimal score for the term frequency :")
-                                if answer != "<":
-                                    for (k, val) in v.items():
-                                        if val > int(answer):
-                                            print(k + ":", val, end="  ")
-                                    print()
-                                answer = ""
-                            answer = ""
-                    answer = ""
+        type_value = choose_type()
+    if answer == "2":
+        files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
+    if answer == "3":
+        word = choose_word(dic_words)
+    if answer == "4":
+        reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF)
 
-        if answer == "2":
-            print("By choosing the TF-IDF option, you'll get to know the TF-IDF score across all these files :")
-            print(list_files_names)
-            print("And here's TF-IDF matrix :")
-            print(TF_IDF)
-
-        if answer == "3":
-            print(choose_word(dic_words))
-            for i in list_files_path:
-                if i in dic_words:
 
 
 
