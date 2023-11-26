@@ -110,3 +110,14 @@ def dict_words(list_path_files):
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
+
+
+def choose_word(dic_words):
+    word = input("Choose a word :")
+    if word not in dic_words():
+        print("Word not present in any of the files. Please choose another one.")
+    else:
+        return word
+
+def find_word(directory, word):
+    files = [i for i in os.listdir(dossier) if fichier.endswith('.txt')]
