@@ -70,40 +70,43 @@ for file_path in list_files_path:
 dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
 TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
-N = -1
+reponse = "-1"
 while True:
-    while (N > 9) or (N < 0):
-        print("Hi. Welcome to this program. What can I do for you ?\n")
-        print("1. Give you the term frequency of each word in a certain file.")
-        print("2. Letting you know the words a president use a lot.")
-        print("3. Which words every president in this list use ?")
-        N = int(input())
+    print("Hi. Welcome to this program. What can I do for you ?\n")
+    print("1. Give you the term frequency of each word in a certain file.")
+    print("2. Letting you know the words a president use a lot.")
+    print("3. Which words every president in this list use ?")
+    reponse = input()
 
-    if N == 1:
-        print("Choose a president in the dictionary below (name) :")
-        dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
-        for j in dic_pres:
-            print(j, dic_pres[j], end="  ")
-        print()
-        reponse = input()
-        key_list = [k for (k, val) in dict_pres_files.items() if val == reponse]
-        if len(key_list) > 1:
-            print("Be sure to select a file")
-            for i, j in enumerate(key_list):
-                print(i, j, end="  ")
-                print()
-            reponse = int(input())
-            key_list = key_list[reponse]
-        key_list = "".join(key_list)
-        print(key_list)
-        v = dict_dict_TF[key_list]
-        reponse = int(input("score mini:"))
-        for (k, val) in v.items():
-            if val > reponse:
-                print(k + ":", val, end="  ")
-        print()
-
-        if N == 2:
+    if reponse == "1":
+        while reponse != "<":
+            print("Choose a president in the dictionary below (name) :")
+            dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
+            for j in dic_pres:
+                print(j, dic_pres[j], end="  ")
             print()
-    N = -1
+            reponse = input()
+            while reponse != "<":
+                key_list = [k for (k, val) in dict_pres_files.items() if val == reponse]
+                if len(key_list) > 1:
+                    print("Be sure to select a file")
+                    for i, j in enumerate(key_list):
+                        print(i, j, end="  ")
+                        print()
+                    reponse = int(input())
+                    key_list = key_list[reponse]
+                key_list = "".join(key_list)
+                print(key_list)
+                v = dict_dict_TF[key_list]
+                while reponse != "<":
+                    reponse = input("score mini:")
+                    if reponse!="<":
+                        for (k, val) in v.items():
+                            if val > int(reponse):
+                                print(k + ":", val, end="  ")
+                    print()
+
+        if reponse == "2":
+            print()
+    reponse = "-1"
 
