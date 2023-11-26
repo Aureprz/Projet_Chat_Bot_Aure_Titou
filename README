@@ -15,6 +15,17 @@ all the words the txt files' directory.
 - Furthermore, the Chatbot can give you the presidents who use which word in their speech(es)
 
 
+User guide :
+To complete your treatment search, you must select all 5 options.
+5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
+and answer them, there's no problem.
+Program default value: each word (=key since they're in a dictionary) has a value of 0, in the interval
+the interval [0;100].
+Also, as you may have noticed or will notice, after answering your request, the Chatbot will send you back the 5 options
+to select. Please note that everything is still stored in memory, i.e. if you previous settings and just change the word,
+for example, all you have to do is select the 3rd option and enter the word of your choice; the Chatbot will return the
+solution in the same conditions as before.
+
 
 ########################################################################################################################
 # Français
@@ -35,3 +46,15 @@ fréquemment.
 - De plus, le Chatbot peut vous donner les présidents qui ont, pour point commun, tous utilisé le mot de votre choix
 dans leur(s) discours.
 
+
+Guide d'utilisation :
+Pour mener à bien votre recherche de traitement, vous devez obligatoirement sélectionner les 5 options.Sélectionnez la
+5ème option seulement après avoir répondu aux 4 options. Pour ces 4 options, peut importe l'ordre dans lequel vous les
+sélectionnez et répondez, il n'y a pas de problème.
+Valeur par défaut du programme : chaque mot (=clé puisque ils se trouvent dans un dictionnaire) a une valeur de 0, dans
+l'intervalle [0;100].
+Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
+vous renverra à nouveau les 5 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
+souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
+3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
+précédemment.
