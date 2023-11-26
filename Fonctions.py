@@ -120,6 +120,7 @@ def choose_word(dic_words):
         words = [word]
         return words
 
+
 def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
     answer = "%nul%"
     while answer not in pres_names:
@@ -132,16 +133,16 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
         if answer == "0":
             return list_files_names
     key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
-        if len(key_list) > 1:
-            answer = 0
-            while  not (0 < answer < len(key_list)):
-                print("Be sure to select a specific file :")
-                for i, j in enumerate(key_list):
-                    print(i, j, end="  ")
-                    print()
-                answer = int(input())
-            key_list = key_list[answer]
-        return key_list
+    if len(key_list) > 1:
+        answer = 0
+        while not (0 < answer < len(key_list)):
+            print("Be sure to select a specific file :")
+            for i, j in enumerate(key_list):
+                print(i, j, end="  ")
+                print()
+            answer = int(input())
+        key_list = key_list[answer]
+    return key_list
 
 
 def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf):
