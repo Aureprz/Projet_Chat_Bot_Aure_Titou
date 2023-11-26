@@ -110,3 +110,30 @@ def dict_words(list_path_files):
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
+
+
+def reponse(type_value, word="all", files, dict_dict_tf, dict_idf, dict_TF_IDF):
+    valeur = {}
+    if type_value == "tf":
+        for file in  files:
+            for (k, val) in dict_dict_tf[file].items():
+                valeur[file].add(k, val)
+
+    elif type_value == "idf":
+        for (word_if, val) in dict_idf.items():
+            if word_if in word:
+                valeur["idf"].add(word_if, val)
+
+    elif type_value == "tf-idf":
+        for file in  files:
+            for (k, val) in dict_TF_IDF[file].items():
+                valeur[file].add(k, val)
+    else:
+        print("an error has occurred")
+
+    for i in valeur:
+        print(i,end=":\n")
+        for word_v, val in valeur[i].items():
+            print(str(word_v)+": ",val)
+        print()
+    print()
