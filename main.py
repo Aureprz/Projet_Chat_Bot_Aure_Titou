@@ -53,7 +53,6 @@ list_stopword = []
 ########################################################################################################################
 # recover the stop words list in the folder
 
-
 with open("stop_words_french.txt", "r", encoding='utf-8') as f1:
     for line in f1:
         list_stopword.append(line[:-1])
@@ -103,5 +102,8 @@ while True:
             if val > reponse:
                 print(k + ":", val, end="  ")
         print()
+
+        if N == 2:
+            print()
     N = -1
 
