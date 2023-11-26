@@ -88,17 +88,17 @@ while True:
 
     if answer == "1":
         type_value = choose_type()
-    if answer == "2":
+    elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
-    if answer == "3":
+    elif answer == "3":
         word = choose_word(dic_words)
-    if answer == "4":
+    elif answer == "4":
         interval = choose_interval()
-    if answer == "5":
+    elif answer == "5":
         reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
     else:
         print("answer undefined")
-    answer = ""
+
 
 
 
