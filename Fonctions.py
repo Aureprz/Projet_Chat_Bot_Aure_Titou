@@ -113,10 +113,10 @@ def dict_words(list_path_files):
 
 
 def choose_word(dic_words):
-    word = input("Choose a word or //0 for all words :")
+    word = input("Choose a word or //0 for all words :\n")
     if word == "//0":
         return dic_words.keys
-    if word not in dic_words():
+    if word not in dic_words.keys():
         print("Word not present in any of the files.")
     else:
         words = [word]
