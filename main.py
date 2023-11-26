@@ -1,6 +1,6 @@
 ########################################################
-# My first Chatbot (Part 1)                       ######
-# Auteurs : Aurélien Perez et Titouan Lenain      ######
+# Name : My first Chatbot (Part 1)                ######
+# Auteurs : Aurélien Perez & Titouan Lenain       ######
 # Version : V 1.0                                 ######
 ########################################################
 
@@ -79,10 +79,10 @@ interval = [0, 100]
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
-    print("0. parameters")
+    print("0. Settings")
     print("1. Select a type of value")
     print("2. Select a file")
-    print("3. select word")
+    print("3. Pick a word")
     print("4. Pick an interval")
     print("5. Reply result")
     answer = input()
@@ -90,15 +90,7 @@ while True:
     if answer == "1":
         type_value = choose_type()
     elif answer == "0":
-        if word == dic_words.keys():
-            word_p = ["%all%"]
-        else:
-            word_p = word
-        if files == list_files_names:
-            files_p = ["%all%"]
-        else:
-            files_p = files
-        print("type_value=", type_value, "\nfichier=", files_p, "\nword=", word_p, "\ninterval=", interval, "\n" * 2)
+        print("type_value=", type_value, "\nfile=", files, "\nword=", word, "\ninterval=", interval, "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
@@ -106,10 +98,7 @@ while True:
     elif answer == "4":
         interval = choose_interval()
     elif answer == "5":
-        reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
+        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
     else:
         print("Answer not defined.")
     answer = ""
-
-
-

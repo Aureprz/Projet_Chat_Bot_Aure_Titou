@@ -149,41 +149,41 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
     return file
 
 
-def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval):
-    valeur = {}
+def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval):
+    value = {}
     if type_value == "tf":
         for file in files:
-            valeur[file] = {}
+            value[file] = {}
             for (k, val) in dict_dict_tf[file].items():
-                valeur[file][k] = val
+                value[file][k] = val
 
     elif type_value == "idf":
-        valeur["idf"] = {}
+        value["idf"] = {}
         for (word_if, val) in dict_idf.items():
             if word_if in word:
-                valeur["idf"][word_if] = val
+                value["idf"][word_if] = val
 
     elif type_value == "tf-idf":
         for file in files:
-            valeur[file] = {}
+            value[file] = {}
             for (k, val) in dict_tf_idf[file].items():
-                valeur[file][k] = val
+                value[file][k] = val
     else:
         print("An error has occurred.")
-    valeur_f = deref_dic_dic(valeur)
-    for name in valeur:
-        for word_v, val in valeur[name].items():
+    f_value = deref_dic_dic(value)
+    for name in value:
+        for word_v, val in value[name].items():
             if word_v not in word:
-                del valeur_f[name][word_v]
-    valeur = deref_dic_dic(valeur_f)
-    for name in valeur:
-        for word_v, val in valeur[name].items():
-            if not(interval[0] <= val <= interval[1]):
-                del valeur_f[name][word_v]
+                del f_value[name][word_v]
+    value = deref_dic_dic(f_value)
+    for name in value:
+        for word_v, val in value[name].items():
+            if not (interval[0] <= val <= interval[1]):
+                del f_value[name][word_v]
 
-    for name in valeur_f:
+    for name in f_value:
         print(name, end=":\n")
-        for word_v, val in valeur_f[name].items():
+        for word_v, val in f_value[name].items():
             print(str(word_v)+": ", val, end="  ")
         print()
     print()
@@ -201,17 +201,17 @@ def choose_type():
 def choose_interval():
     a, b = -1, -1
     while not 0 <= a:
-        print("select minimal value (value>=0)")
+        print("Please choose a minimal value (value>=0) :")
         try:
             a = int(input())
         except ValueError:
-            print("Valeur inccorrecte")
+            print("Incorrect value.")
     while not a <= b:
-        print("select maximal value (value>="+str(a)+")")
+        print("Please select a maximal value (value>="+str(a)+") :")
         try:
             b = int(input())
         except ValueError:
-            print("Valeur inccorrecte")
+            print("Incorrect value.")
     interval = [a, b]
     return interval
 
@@ -223,3 +223,4 @@ def deref_dic_dic(dic_dic):
         for k, val in dic_dic[dic].items():
             dic_dic_2[dic][k] = val
     return dic_dic_2
+
