@@ -98,17 +98,19 @@ while True:
                         reponse = input()
                         if reponse != "<":
                             key_list = key_list[int(reponse)]
-                    if reponse != "<":
+                    if reponse != ("<" or ""):
                         key_list = "".join(key_list)
                         print(key_list)
                         v = dict_dict_TF[key_list]
-                        while reponse != "<":
-                            reponse = input("score mini:")
-                            if reponse != "<":
-                                for (k, val) in v.items():
-                                    if val > int(reponse):
-                                        print(k + ":", val, end="  ")
-                                print()
+                        if reponse != "<":
+                            while reponse != "<":
+                                reponse = input("score mini:")
+                                if reponse != "<":
+                                    for (k, val) in v.items():
+                                        if val > int(reponse):
+                                            print(k + ":", val, end="  ")
+                                    print()
+                            reponse = ""
                         reponse = ""
                 reponse = ""
 
