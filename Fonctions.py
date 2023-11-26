@@ -170,3 +170,12 @@ def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf):
             print(str(word_v)+": ", val)
         print()
     print()
+
+
+def choose_type():
+    answer = 0
+    types = ["tf", "idf", "tf-idf"]
+    while not (1 < answer < 3):
+        print("choisi le type de resultat:\n1: for terme-frenquence\n2: for inverse document frenquence\n3: for tf-idf")
+        answer = int(input())
+    return types[answer]
