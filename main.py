@@ -48,10 +48,6 @@ list_punctuation = [
 # list of stopword (not important word)
 list_stopword = []
 
-#
-type_value = ""
-word = ""
-files = ""
 ########################################################################################################################
 # MAIN PROGRAM
 ########################################################################################################################
@@ -74,13 +70,20 @@ for file_path in list_files_path:
 dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
 TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
+#
+type_value = "tf"
+word = dic_words
+files = list_files_names
+interval = [0, 100]
 
+print("Hi. Welcome to this program. What can I do for you ?\n")
 while True:
 
-    print("Hi. Welcome to this program. What can I do for you ?\n")
-    print("1. Give you the term frequency of each word in a certain file.")
-    print("2. Letting you know the TF-IDF score of each word across the files.")
-    print("3. Pick a word and see which president did use it.")
+    print("1. select type of value")
+    print("2. select a files")
+    print("3. select a word")
+    print("4. select a interval")
+    print("5. reply result")
     answer = input()
 
     if answer == "1":
@@ -90,8 +93,12 @@ while True:
     if answer == "3":
         word = choose_word(dic_words)
     if answer == "4":
-        reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF)
-
+        interval = choose_interval()
+    if answer == "5":
+        reponse(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
+    else:
+        print("answer undefined")
+    answer = ""
 
 
 

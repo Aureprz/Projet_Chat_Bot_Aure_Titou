@@ -113,7 +113,9 @@ def dict_words(list_path_files):
 
 
 def choose_word(dic_words):
-    word = input("Choose a word :")
+    word = input("Choose a word or //0 for all words :")
+    if word == "//0":
+        return dic_words.keys
     if word not in dic_words():
         print("Word not present in any of the files.")
     else:
@@ -145,29 +147,41 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
     return key_list
 
 
-def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf):
+def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval):
     valeur = {}
     if type_value == "tf":
         for file in files:
+            valeur[file] = {}
             for (k, val) in dict_dict_tf[file].items():
-                valeur[file].add(k, val)
+                valeur[file][k] = val
 
     elif type_value == "idf":
+        valeur["idf"] = {}
         for (word_if, val) in dict_idf.items():
             if word_if in word:
-                valeur["idf"].add(word_if, val)
+                valeur["idf"][word_if] = val
 
     elif type_value == "tf-idf":
         for file in files:
+            valeur[file] = {}
             for (k, val) in dict_tf_idf[file].items():
-                valeur[file].add(k, val)
+                valeur[file][k] = val
     else:
         print("an error has occurred")
+    valeur_f = valeur
+    for name in valeur:
+        for word_v, val in valeur[name].items():
+            if word_v not in word:
+                del valeur_f[name][word_v]
+    for name in valeur:
+        for word_v, val in valeur[name].items():
+            if not(interval[0] <= val <= interval[1]):
+                del valeur_f[name][word_v]
 
-    for i in valeur:
-        print(i, end=":\n")
-        for word_v, val in valeur[i].items():
-            print(str(word_v)+": ", val)
+    for name in valeur_f:
+        print(name, end=":\n")
+        for word_v, val in valeur_f[name].items():
+            print(str(word_v)+": ", val, end="  ")
         print()
     print()
 
@@ -175,7 +189,25 @@ def reponse(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf):
 def choose_type():
     answer = 0
     types = ["tf", "idf", "tf-idf"]
-    while not (1 < answer < 3):
+    while not (1 <= answer <= 3):
         print("choisi le type de resultat:\n1: for terme-frenquence\n2: for inverse document frenquence\n3: for tf-idf")
         answer = int(input())
-    return types[answer]
+    return types[answer-1]
+
+
+def choose_interval():
+    a, b = -1, -1
+    while not 0 <= a:
+        print("select minimal value (value>=0)")
+        try:
+            a = int(input())
+        except ValueError:
+            print("Valeur inccorrecte")
+    while not a <= b:
+        print("select maximal value (value>="+str(a)+")")
+        try:
+            b = int(input())
+        except ValueError:
+            print("Valeur inccorrecte")
+    interval = [a, b]
+    return interval
