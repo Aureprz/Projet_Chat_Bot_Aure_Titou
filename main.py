@@ -1,7 +1,7 @@
 ########################################################
 # My first Chatbot (Part 1)                       ######
 # Auteurs : Aurélien Perez et Titouan Lenain      ######
-# Version : V 0.8                                 ######
+# Version : V 1.0                                 ######
 ########################################################
 
 ########################################################################################################################
@@ -70,51 +70,61 @@ for file_path in list_files_path:
 dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
 TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
-reponse = "-1"
+
 while True:
+
     print("Hi. Welcome to this program. What can I do for you ?\n")
     print("1. Give you the term frequency of each word in a certain file.")
-    print("2. Letting you know the words a president use a lot.")
-    print("3. Which words every president in this list use ?")
-    reponse = input()
+    print("2. Letting you know the TF-IDF score of each word across the files.")
+    print("3. Pick a word and see which president did use it.")
+    answer = input()
 
-    if reponse == "1":
-        while reponse != "<":
+    if answer == "1":
+        while answer != "<":
             print("Choose a president in the dictionary below (name) :")
             dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
             for j in dic_pres:
                 print(j, dic_pres[j], end="  ")
             print()
-            reponse = input()
-            if reponse != "<":
-                name_chosen = reponse
-                while reponse != "<":
+            answer = input()
+            if answer != "<":
+                name_chosen = answer
+                while answer != "<":
                     key_list = [k for (k, val) in dict_pres_files.items() if val == name_chosen]
                     if len(key_list) > 1:
-                        print("Be sure to select a file")
+                        print("Be sure to select a specific file :")
                         for i, j in enumerate(key_list):
                             print(i, j, end="  ")
                             print()
-                        reponse = input()
-                        if reponse != "<":
-                            key_list = key_list[int(reponse)]
-                    if reponse != ("<" or ""):
-                        key_list = "".join(key_list)
-                        print(key_list)
-                        v = dict_dict_TF[key_list]
-                        if reponse != "<":
-                            while reponse != "<":
-                                reponse = input("score mini:")
-                                if reponse != "<":
+                        answer = input()
+                        if answer != "<":
+                            key_list = key_list[int(answer)]
+                    if answer != "<":
+                        if answer != ("<" or ""):
+                            key_list = "".join(key_list)
+                            print(key_list)
+                            v = dict_dict_TF[key_list]
+                            while answer != "<" or answer < "0":
+                                answer = input("Enter a minimal score for the term frequency :")
+                                if answer != "<":
                                     for (k, val) in v.items():
-                                        if val > int(reponse):
+                                        if val > int(answer):
                                             print(k + ":", val, end="  ")
                                     print()
-                            reponse = ""
-                        reponse = ""
-                reponse = ""
+                                answer = ""
+                            answer = ""
+                    answer = ""
 
-        if reponse == "2":
-            print()
-    reponse = "-1"
+        if answer == "2":
+            print("By choosing the TF-IDF option, you'll get to know the TF-IDF score across all these files :")
+            print(list_files_names)
+            print("And here's TF-IDF matrix :")
+            print(TF_IDF)
+
+        if answer == "3":
+            print(choose_word(dic_words))
+            for i in list_files_path:
+                if i in dic_words:
+
+
 

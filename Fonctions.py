@@ -112,6 +112,16 @@ def dict_words(list_path_files):
     return dict_word
 
 
+def choose_word(dic_words):
+    word = input("Choose a word :")
+    if word not in dic_words():
+        print("Word not present in any of the files. Please choose another one.")
+    else:
+        return word
+
+def find_word(directory, word):
+    files = [i for i in os.listdir(dossier) if fichier.endswith('.txt')]
+
 def reponse(type_value, word="all", files, dict_dict_tf, dict_idf, dict_TF_IDF):
     valeur = {}
     if type_value == "tf":
