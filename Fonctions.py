@@ -114,9 +114,10 @@ def dict_words(list_path_files):
 
 
 def choose_word(dic_words):
-    word = input("Choose a word (or //0 for all words) :\n")
-    if word == "//0":
-        return dic_words.keys
+    word = input("Choose a word (or '%all%' for all words) :\n")
+    if word == "%all%":
+        word = deref_dic_key(dic_words)
+        return word
     if word not in dic_words.keys():
         print("Word not present in any of the files.")
     else:
@@ -127,13 +128,13 @@ def choose_word(dic_words):
 def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
     answer = "%nul%"
     while answer not in pres_names:
-        print("Choose a president in the dictionary below (name) or '//0' for all :")
+        print("Choose a president in the dictionary below (name) or '%all%' for all :")
         dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
         for j in dic_pres:
             print(j, dic_pres[j], end="  ")
         print()
         answer = input()
-        if answer == "//0":
+        if answer == "%all%":
             return list_files_names
     key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
     if len(key_list) > 1:
@@ -145,11 +146,13 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
                 print()
             answer = int(input())
         key_list = key_list[answer]
-    file = [key_list]
+        file = [key_list]
+    else:
+        file = key_list
     return file
 
 
-def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval):
+def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort):
     value = {}
     if type_value == "tf":
         for file in files:
@@ -180,8 +183,9 @@ def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval
         for word_v, val in value[name].items():
             if not (interval[0] <= val <= interval[1]):
                 del f_value[name][word_v]
-
+    f_value = func_sorte(f_value, type_sort)
     for name in f_value:
+        print()
         print(name, end=":\n")
         for word_v, val in f_value[name].items():
             print(str(word_v)+": ", val, end="  ")
@@ -203,13 +207,13 @@ def choose_interval():
     while not 0 <= a:
         print("Please choose a minimal value (value>=0) :")
         try:
-            a = int(input())
+            a = float(input())
         except ValueError:
             print("Incorrect value.")
     while not a <= b:
         print("Please select a maximal value (value>="+str(a)+") :")
         try:
-            b = int(input())
+            b = float(input())
         except ValueError:
             print("Incorrect value.")
     interval = [a, b]
@@ -224,3 +228,24 @@ def deref_dic_dic(dic_dic):
             dic_dic_2[dic][k] = val
     return dic_dic_2
 
+
+def deref_dic_key(dic):
+    dic_2 = []
+    for k in dic.keys():
+        dic_2.append(k)
+    return dic_2
+
+
+def func_sorte(dic, type_sort):
+    """Trier les valeurs à l'intérieur de chaque sous-dictionnaire"""
+    for key in dic:
+        dic[key] = dict(sorted(dic[key].items(), key=lambda item: item[1], reverse=type_sort))
+    return dic
+
+
+def choose_sorte():
+    answer = 0
+    while not (1 <= answer <= 2):
+        print("Choose the result type :\n1 : For ascending order\n2 : For descending order")
+        answer = int(input())
+    return bool(answer-1)

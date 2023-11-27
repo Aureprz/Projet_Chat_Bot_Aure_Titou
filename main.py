@@ -72,10 +72,10 @@ TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
 #
 type_value = "tf"
-word = dic_words.keys()
+word = deref_dic_key(dic_words)
 files = list_files_names
 interval = [0, 100]
-
+type_sort = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
@@ -84,21 +84,27 @@ while True:
     print("2. Select a file")
     print("3. Pick a word")
     print("4. Pick an interval")
-    print("5. Reply result")
+    print("5. select a type of sort")
+    print("6. Reply result")
     answer = input()
 
     if answer == "1":
         type_value = choose_type()
     elif answer == "0":
-        if word == dic_words.keys():
+        if word == deref_dic_key(dic_words):
             word_p = ["%all%"]
         else:
             word_p = word
-        if files == list_files_names:
+        if files == list_files_names:0
             files_p = ["%all%"]
         else:
             files_p = files
-        print("type_value=", type_value, "\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval, "\n" * 2)
+        if type_sort is False:
+            type_sort_p = "[ascending]"
+        else:
+            type_sort_p = "[descending]"
+        print("type_value= [" + type_value + "]\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval,
+              "\nsort=", type_sort_p, "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
@@ -106,7 +112,9 @@ while True:
     elif answer == "4":
         interval = choose_interval()
     elif answer == "5":
-        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval)
+        type_sort = choose_sorte()
+    elif answer == "6":
+        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort)
     else:
         print("Answer not defined.")
     answer = ""
