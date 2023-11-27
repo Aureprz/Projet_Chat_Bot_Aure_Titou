@@ -90,7 +90,15 @@ while True:
     if answer == "1":
         type_value = choose_type()
     elif answer == "0":
-        print("type_value=", type_value, "\nfile=", files, "\nword=", word, "\ninterval=", interval, "\n" * 2)
+        if word == dic_words.keys():
+            word_p = ["%all%"]
+        else:
+            word_p = word
+        if files == list_files_names:
+            files_p = ["%all%"]
+        else:
+            files_p = files
+        print("type_value=", type_value, "\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval, "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
