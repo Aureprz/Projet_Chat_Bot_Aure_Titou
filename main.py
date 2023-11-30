@@ -112,7 +112,7 @@ while True:
         else:
             mean_p = "[ON]"
         print("type_value= [" + type_value + "]\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval,
-              "\nsort=", type_sort_p, "\nmean=", mean_p, "\n" * 2)
+              "\nsort=", type_sort_p, "\nmean=", mean_p, "\ndecimal=", decimal, "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
