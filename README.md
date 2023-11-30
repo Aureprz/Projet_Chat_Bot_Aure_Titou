@@ -1,6 +1,4 @@
-########################################################################################################################
 # English
-########################################################################################################################
 Hi. If you're reading this, you probably already know what this program is about. It's a project we have in our first
 semester at Efrei Paris and is kind of a Chatbot. This program's just about the first part of the whole project
 (out of 3). Without further ado, here's what the Chatbot can do in this part :
@@ -16,8 +14,8 @@ all the words the txt files' directory.
 
 GitHub link : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-###User guide :
-#######################################################################################################################
+##User guide :
+
 To complete your treatment search, you must select all 5 options.
 5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
 and answer them, there's no problem.
@@ -106,3 +104,6 @@ Fonctionnement (du main.py) :
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
   3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
   précédemment.
+## [Contributeurs]()
+- [Aureprz](https://github.com/Aureprz)
+- [Artchhh](https://github.com/Artchhh)
