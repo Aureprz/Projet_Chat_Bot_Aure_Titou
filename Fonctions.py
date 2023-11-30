@@ -165,7 +165,8 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
             file.append(key_list[0])
         answer = "%null%"
 
-def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort):
+
+def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort, somme):
     value = {}
     if type_value == "tf":
         for file in files:
@@ -196,6 +197,8 @@ def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval
         for word_v, val in value[name].items():
             if not (interval[0] <= val <= interval[1]):
                 del f_value[name][word_v]
+    if somme is True:
+        f_value = f_mean(f_value)
     f_value = func_sorte(f_value, type_sort)
     for name in f_value:
         print()
@@ -260,5 +263,28 @@ def choose_sorte():
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose the result type :\n1 : For ascending order\n2 : For descending order")
+        answer = int(input())
+    return bool(answer-1)
+
+
+def f_mean(dic_dic):
+    dico = {}
+    nb_doc = len(dic_dic)
+    for name in dic_dic:
+        for word, val in dic_dic[name].items():
+            if word in dico:
+                dico[word] += val
+            else:
+                dico[word] = val
+    for word, val in dico.items():
+        dico[word]/= nb_doc
+    dico = {"mean": dico}
+    return dico
+
+
+def choose_mean():
+    answer = 0
+    while not (1 <= answer <= 2):
+        print("Choose if somme is on :\n1 : For off \n2 : For on")
         answer = int(input())
     return bool(answer-1)

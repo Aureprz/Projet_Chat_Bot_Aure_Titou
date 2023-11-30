@@ -76,6 +76,7 @@ word = deref_dic_key(dic_words)
 files = list_files_names
 interval = [0, 100]
 type_sort = True
+mean = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
@@ -85,7 +86,8 @@ while True:
     print("3. Pick a word")
     print("4. Pick an interval")
     print("5. select a type of sort")
-    print("6. Reply result")
+    print("6. mean on/off")
+    print("7. Reply result")
     answer = input()
 
     if answer == "1":
@@ -103,8 +105,12 @@ while True:
             type_sort_p = "[ascending]"
         else:
             type_sort_p = "[descending]"
+        if mean is False:
+            mean_p = "[OFF]"
+        else:
+            mean_p = "[ON]"
         print("type_value= [" + type_value + "]\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval,
-              "\nsort=", type_sort_p, "\n" * 2)
+              "\nsort=", type_sort_p, "\nmean=", mean_p, "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
@@ -114,7 +120,9 @@ while True:
     elif answer == "5":
         type_sort = choose_sorte()
     elif answer == "6":
-        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort)
+        mean = choose_mean()
+    elif answer == "7":
+        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean)
     else:
         print("Answer not defined.")
     answer = ""
