@@ -46,7 +46,20 @@ dans leur(s) discours.
 
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-## Guide installation :
+## Guide installation et lancement :
+
+Pour les développeurs, il faut installer [Git](https://git-scm.com/).
+Puis, il faut cloner le dépôt :
+```bash
+git clone https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou.git
+```
+Et enfin run le fichier:
+```bash
+main.py
+```
+
+Attention à bien garder à  jour votre code avec `git pull` et  à bien commit les changements avec `git commit`.
+
 ## Guide d'utilisation :
 
 ## But du programme :
