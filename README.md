@@ -14,7 +14,7 @@ all the words the txt files' directory.
 
 GitHub link : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-##User guide :
+#User guide :
 
 To complete your treatment search, you must select all 5 options.
 5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
@@ -46,8 +46,8 @@ dans leur(s) discours.
 
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-
-##Guide d'utilisation :
+#Guide installation :
+#Guide d'utilisation :
 
 ##But du programme :
 
