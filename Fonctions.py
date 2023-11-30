@@ -54,6 +54,9 @@ def term_frequency(name_file_cleaned, dict_word):
         list_txt = f1.read().split(" ")
     for i in list_txt:
         score_tf[i] = score_tf[i]+1
+    for word, val in score_tf.items():
+        score_tf[word] /= len(list_txt)
+
     return score_tf
 
 
@@ -67,7 +70,7 @@ def inverse_document_frequency(list_dict_term, dict_word):
 
     nb_documents = len(list_dict_term)
     for i in score_tf:
-        score_tf[i] = log10((nb_documents / score_tf[i]) + 1)
+        score_tf[i] = log10(nb_documents / (score_tf[i]))
     return score_tf
 
 
@@ -277,7 +280,7 @@ def f_mean(dic_dic):
             else:
                 dico[word] = val
     for word, val in dico.items():
-        dico[word]/= nb_doc
+        dico[word] /= nb_doc
     dico = {"mean": dico}
     return dico
 
