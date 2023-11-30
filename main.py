@@ -75,6 +75,7 @@ type_value = "tf"
 word = deref_dic_key(dic_words)
 files = list_files_names
 interval = [0, 100]
+decimal = 3
 type_sort = True
 mean = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
@@ -87,7 +88,8 @@ while True:
     print("4. Pick an interval")
     print("5. select a type of sort")
     print("6. mean on/off")
-    print("7. Reply result")
+    print("7. nb of decimal")
+    print("8. Reply result")
     answer = input()
 
     if answer == "1":
@@ -122,7 +124,9 @@ while True:
     elif answer == "6":
         mean = choose_mean()
     elif answer == "7":
-        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean)
+        decimal = choose_decimal()
+    elif answer == "8":
+        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean, decimal)
     else:
         print("Answer not defined.")
     answer = ""
