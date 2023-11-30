@@ -100,6 +100,8 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
   3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
   précédemment.
+## Todo
+
 ## [Contributeurs]()
 - [Aureprz](https://github.com/Aureprz)
 - [Artchhh](https://github.com/Artchhh)
