@@ -67,29 +67,29 @@ Fonctionnement (du main.py) :
 
 * Vous avez le choix parmi 6 options :
 
-    - "0"
+    - ``0``
         #Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
 
-    - "1"
+    - ``1``
         #Vous permet de choisir entre le score tf, le score idf ou le score tf-idf du ou des terme(s) sélectionnés
 
-    - "2"
+     - ``2``
         #Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
         fait plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
 
-    - "3"
+    - ``3``
         #Donnez autant de mots que vous le souhaitez ou taper "%all%" afin de sélectionner tous les mots possibles
 
-    - "4"
+    - ``4``
         #Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
         souhaitée
 
-    - "5"
+    - ``5``
         #Ici, vous choisissez dans quel ordre l'affichage va se montrer : soit dans l'ordre croissant ("ascending") soit
         l'ordre décroissant ("descending")
 
-    - "6"
+    - ``6``
         #Vous renvoie le résultat
 
     - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les
