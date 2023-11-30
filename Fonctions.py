@@ -114,43 +114,56 @@ def dict_words(list_path_files):
 
 
 def choose_word(dic_words):
-    word = input("Choose a word (or '%all%' for all words) :\n")
-    if word == "%all%":
-        word = deref_dic_key(dic_words)
-        return word
-    if word not in dic_words.keys():
-        print("Word not present in any of the files.")
-    else:
-        words = [word]
-        return words
+    word = "%null%"
+    dic_word = []
+    while word != "%end%" or len(dic_word) == 0:
+        print("Your selected words:", dic_word)
+        word = input("Choose word (or '%all%' for all words) and use '%end%' to exit :\n")
+        if word == "%all%":
+            dic_word = deref_dic_key(dic_words)
+            return dic_word
+        if word == "%end%" and len(dic_word) == 0:
+            print("Please choose at least a word.")
+        elif word not in dic_words.keys():
+            print("Word not present in any of the files.")
+        else:
+            dic_word.append(word)
+    return dic_word
 
 
 def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
-    answer = "%nul%"
-    while answer not in pres_names:
-        print("Choose a president in the dictionary below (name) or '%all%' for all :")
-        dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
-        for j in dic_pres:
-            print(j, dic_pres[j], end="  ")
-        print()
-        answer = input()
-        if answer == "%all%":
-            return list_files_names
-    key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
-    if len(key_list) > 1:
-        answer = 0
-        while not (0 < answer < len(key_list)):
-            print("Be sure to select a specific file :")
-            for i, j in enumerate(key_list):
-                print(i, j, end="  ")
-                print()
-            answer = int(input())
-        key_list = key_list[answer]
-        file = [key_list]
-    else:
-        file = key_list
-    return file
-
+    answer = "%null%"
+    file = []
+    while True:
+        print("Yours selected files:", file)
+        while answer not in pres_names:
+            print("Choose a president in the dictionary below (name) or '%all%' for all :")
+            dic_pres = noms_prenoms(dict_pres["p5"], pres_names)
+            for j in dic_pres:
+                print(j, dic_pres[j], end="  ")
+            print()
+            answer = input()
+            if answer == "%all%":
+                return list_files_names
+            elif answer == "%end%":
+                if len(file) != 0:
+                    return file
+                else:
+                    print("Choose at least a file.")
+        key_list = [k for (k, val) in dict_pres_files.items() if val == answer]
+        if len(key_list) > 1:
+            answer = -1
+            while not (0 <= answer < len(key_list)):
+                print("Be sure to select a specific file :")
+                for i, j in enumerate(key_list):
+                    print(i, j, end="  ")
+                    print()
+                answer = int(input())
+            key_list = key_list[answer]
+            file.append(key_list)
+        else:
+            file.append(key_list[0])
+        answer = "%null%"
 
 def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort):
     value = {}

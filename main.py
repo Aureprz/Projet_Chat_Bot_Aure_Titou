@@ -95,7 +95,7 @@ while True:
             word_p = ["%all%"]
         else:
             word_p = word
-        if files == list_files_names:0
+        if files == list_files_names:
             files_p = ["%all%"]
         else:
             files_p = files
