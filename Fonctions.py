@@ -195,13 +195,13 @@ def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval
         for word_v, val in value[name].items():
             if word_v not in word:
                 del f_value[name][word_v]
+    if somme is True:
+        f_value = f_mean(f_value)
     value = deref_dic_dic(f_value)
     for name in value:
         for word_v, val in value[name].items():
             if not (interval[0] <= val <= interval[1]):
                 del f_value[name][word_v]
-    if somme is True:
-        f_value = f_mean(f_value)
     f_value = func_sorte(f_value, type_sort)
     for name in f_value:
         print()
