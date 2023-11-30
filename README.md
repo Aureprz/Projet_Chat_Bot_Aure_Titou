@@ -102,6 +102,6 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
   précédemment.
 ## Todo
 
-## [Contributeurs]()
+## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
 - [Aureprz](https://github.com/Aureprz)
 - [Artchhh](https://github.com/Artchhh)
