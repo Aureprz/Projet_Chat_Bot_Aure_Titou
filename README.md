@@ -26,9 +26,8 @@ for example, all you have to do is select the 3rd option and enter the word of y
 solution in the same conditions as before.
 
 
-########################################################################################################################
+
 # Français
-########################################################################################################################
 Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. C'est un projet que nous avons dans notre
 premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du projet
 (sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut faire :
@@ -48,47 +47,44 @@ dans leur(s) discours.
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
 
-###Guide d'utilisation :
-########################################################################################################################
+##Guide d'utilisation :
 
-But du programme :
+##But du programme :
 
 Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
 
-------------------------------------------------------------------------------------------------------------------------
-Fichiers :
+##Fichiers :
 
 Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.py
 
-------------------------------------------------------------------------------------------------------------------------
-Fonctionnement (du main.py) :
+###Fonctionnement (du main.py) :
 
 * Vous avez le choix parmi 6 options :
 
     - ``0``
-        #Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
+        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
 
     - ``1``
-        #Vous permet de choisir entre le score tf, le score idf ou le score tf-idf du ou des terme(s) sélectionnés
+        Vous permet de choisir entre le score tf, le score idf ou le score tf-idf du ou des terme(s) sélectionnés
 
      - ``2``
-        #Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
+        Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
         fait plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
 
     - ``3``
-        #Donnez autant de mots que vous le souhaitez ou taper "%all%" afin de sélectionner tous les mots possibles
+        Donnez autant de mots que vous le souhaitez ou taper "%all%" afin de sélectionner tous les mots possibles
 
     - ``4``
-        #Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
+        Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
         souhaitée
 
     - ``5``
-        #Ici, vous choisissez dans quel ordre l'affichage va se montrer : soit dans l'ordre croissant ("ascending") soit
+        Ici, vous choisissez dans quel ordre l'affichage va se montrer : soit dans l'ordre croissant ("ascending") soit
         l'ordre décroissant ("descending")
 
     - ``6``
-        #Vous renvoie le résultat
+        Vous renvoie le résultat
 
     - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les
                                        fichiers et mots)
