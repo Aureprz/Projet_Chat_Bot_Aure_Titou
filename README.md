@@ -86,13 +86,8 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
     - ``6``
         Vous renvoie le résultat
 
-    - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les
-                                       fichiers et mots)
+    - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les fichiers et mots)
 
-
-* Pour mener à bien votre expérience, vous devez obligatoirement sélectionner les 6 options. Sélectionnez la
-  6ème option seulement après avoir répondu aux 5 options. Pour ces 5 options, peut importe l'ordre dans lequel vous les
-  sélectionnez et répondez, il n'y a pas de problème.
 
 
 * Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
