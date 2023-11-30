@@ -14,7 +14,7 @@ all the words the txt files' directory.
 
 GitHub link : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-#User guide :
+## User guide :
 
 To complete your treatment search, you must select all 5 options.
 5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
@@ -46,18 +46,18 @@ dans leur(s) discours.
 
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-#Guide installation :
-#Guide d'utilisation :
+## Guide installation :
+## Guide d'utilisation :
 
-##But du programme :
+## But du programme :
 
 Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
 
-##Fichiers :
+### Fichiers :
 
 Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.py
 
-###Fonctionnement (du main.py) :
+### Fonctionnement (du main.py) :
 
 * Vous avez le choix parmi 6 options :
 
