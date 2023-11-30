@@ -1,6 +1,4 @@
-########################################################################################################################
 # English
-########################################################################################################################
 Hi. If you're reading this, you probably already know what this program is about. It's a project we have in our first
 semester at Efrei Paris and is kind of a Chatbot. This program's just about the first part of the whole project
 (out of 3). Without further ado, here's what the Chatbot can do in this part :
@@ -16,8 +14,8 @@ all the words the txt files' directory.
 
 GitHub link : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
-###User guide :
-#######################################################################################################################
+## User guide :
+
 To complete your treatment search, you must select all 5 options.
 5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
 and answer them, there's no problem.
@@ -28,9 +26,8 @@ for example, all you have to do is select the 3rd option and enter the word of y
 solution in the same conditions as before.
 
 
-########################################################################################################################
+
 # Français
-########################################################################################################################
 Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. C'est un projet que nous avons dans notre
 premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du projet
 (sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut faire :
@@ -49,17 +46,62 @@ dans leur(s) discours.
 
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
 
+## Guide installation :
+## Guide d'utilisation :
 
-###Guide d'utilisation :
-#######################################################################################################################
-Pour mener à bien votre recherche de traitement, vous devez obligatoirement sélectionner les 5 options.Sélectionnez la
-5ème option seulement après avoir répondu aux 4 options. Pour ces 4 options, peut importe l'ordre dans lequel vous les
-sélectionnez et répondez, il n'y a pas de problème.
+## But du programme :
 
-Valeur par défaut du programme : fichier=[%all%], mot=[%all%] dans l'intervalle [0;100] (soit tous les fichiers et mots)
+Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
 
-Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
-vous renverra à nouveau les 5 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
-souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
-3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
-précédemment.
+### Fichiers :
+
+Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.py
+
+### Fonctionnement (du main.py) :
+
+* Vous avez le choix parmi 6 options :
+
+    - ``0``
+        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
+        défaut (vous l'avez après l'explication des 6 options)
+
+    - ``1``
+        Vous permet de choisir entre le score tf, le score idf ou le score tf-idf du ou des terme(s) sélectionnés
+
+     - ``2``
+        Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
+        fait plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
+
+    - ``3``
+        Donnez autant de mots que vous le souhaitez ou taper "%all%" afin de sélectionner tous les mots possibles
+
+    - ``4``
+        Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
+        souhaitée
+
+    - ``5``
+        Ici, vous choisissez dans quel ordre l'affichage va se montrer : soit dans l'ordre croissant ("ascending") soit
+        l'ordre décroissant ("descending")
+
+    - ``6``
+        Vous renvoie le résultat
+
+    - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les
+                                       fichiers et mots)
+
+
+* Pour mener à bien votre expérience, vous devez obligatoirement sélectionner les 6 options. Sélectionnez la
+  6ème option seulement après avoir répondu aux 5 options. Pour ces 5 options, peut importe l'ordre dans lequel vous les
+  sélectionnez et répondez, il n'y a pas de problème.
+
+
+* Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
+  vous renverra à nouveau les 6 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
+  souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
+  3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
+  précédemment.
+## Todo
+
+## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
+- [Aureprz](https://github.com/Aureprz)
+- [Artchhh](https://github.com/Artchhh)
