@@ -169,7 +169,7 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
         answer = "%null%"
 
 
-def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort, somme, decimal):
+def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval, type_sort, somme, decimal, show_val):
     value = {}
     if type_value == "tf":
         for file in files:
@@ -207,7 +207,10 @@ def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval
         print()
         print(name, end=":\n")
         for word_v, val in f_value[name].items():
-            print(str(word_v)+"{:.{}e}".format(val, decimal), end="  ")
+            print(str(word_v), end="")
+            if show_val is True:
+                print(": {:.{}e}".format(val, decimal), end="")
+            print("  ", end="")
         print()
     print()
 
@@ -292,8 +295,18 @@ def choose_mean():
         answer = int(input())
     return bool(answer-1)
 
+
 def choose_decimal():
     answer = -1
     while answer < 0:
+        print("select number of decimal")
         answer = int(input())
     return answer
+
+
+def choose_show_val():
+    answer = 0
+    while not (1 <= answer <= 2):
+        print("Choose if you show value :\n1 : For off \n2 : For on")
+        answer = int(input())
+    return bool(answer - 1)

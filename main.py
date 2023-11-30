@@ -76,6 +76,7 @@ word = deref_dic_key(dic_words)
 files = list_files_names
 interval = [0, 100]
 decimal = 3
+show_val = True
 type_sort = True
 mean = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
@@ -89,7 +90,8 @@ while True:
     print("5. select a type of sort")
     print("6. mean on/off")
     print("7. nb of decimal")
-    print("8. Reply result")
+    print("8. val on/off")
+    print("9. Reply result")
     answer = input()
 
     if answer == "1":
@@ -111,8 +113,13 @@ while True:
             mean_p = "[OFF]"
         else:
             mean_p = "[ON]"
+        if show_val is False:
+            show_val_p = "[OFF]"
+        else:
+            show_val_p = "[ON]"
         print("type_value= [" + type_value + "]\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval,
-              "\nsort=", type_sort_p, "\nmean=", mean_p, "\ndecimal=", decimal, "\n" * 2)
+              "\nsort=", type_sort_p, "\nmean=", mean_p, "\ndecimal= [" + str(decimal) + "]\nvalue=", show_val_p,
+              "\n" * 2)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
@@ -126,7 +133,9 @@ while True:
     elif answer == "7":
         decimal = choose_decimal()
     elif answer == "8":
-        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean, decimal)
+        show_val = choose_show_val()
+    elif answer == "9":
+        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean, decimal, show_val)
     else:
         print("Answer not defined.")
     answer = ""
