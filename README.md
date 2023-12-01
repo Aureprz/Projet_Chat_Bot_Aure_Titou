@@ -73,9 +73,9 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
             
     - ``3``
         Vous permet de filtrer le résultat en ne gardant que les mots sélectionnez.
-          - ``mot`` donnez le mot que vous souhaitez selectionner.
-          - ``%all%`` pour selctionner tous les mots du corpus.
-          - ``%end%`` pour terminer la selection.
+           -  ``mot`` donnez le mot que vous souhaitez selectionner.
+           -  ``%all%`` pour selctionner tous les mots du corpus.
+           -  ``%end%`` pour terminer la selection.
 
     - ``4``
         Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
