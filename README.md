@@ -35,7 +35,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
 ## Guide d'utilisation :
 
-* aprés le lancement  avez le choix parmi 9 options :
+* aprés le lancement vous avez le choix parmi 9 options :
 
     - ``0``
         Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
