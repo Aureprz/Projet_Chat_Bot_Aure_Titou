@@ -6,7 +6,10 @@ def choose_type():
     types = ["tf", "idf", "tf-idf"]
     while not (1 <= answer <= 3):
         print("Choose the result type :\n1 : For term frequency\n2 : For inverse document frequency\n3 : For TF-IDF")
-        answer = int(input())
+        try:
+            answer = int(input())
+        except ValueError:
+            print("Incorrect value.")
     return types[answer-1]
 
 
@@ -85,7 +88,10 @@ def choose_sort():
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose the result type :\n1 : For ascending order\n2 : For descending order")
-        answer = int(input())
+        try:
+            answer = int(input())
+        except ValueError:
+            print("Incorrect value.")
     return bool(answer-1)
 
 
@@ -93,7 +99,10 @@ def choose_mean():
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose if somme is on :\n1 : For off \n2 : For on")
-        answer = int(input())
+        try:
+            answer = int(input())
+        except ValueError:
+            print("Incorrect value.")
     return bool(answer-1)
 
 
@@ -101,7 +110,10 @@ def choose_decimal():
     answer = -1
     while answer < 0:
         print("select number of decimal")
-        answer = int(input())
+        try:
+            answer = float(input())
+        except ValueError:
+            print("Incorrect value.")
     return answer
 
 
@@ -109,7 +121,10 @@ def choose_show_val():
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose if you show value :\n1 : For off \n2 : For on")
-        answer = int(input())
+        try:
+            answer = int(input())
+        except ValueError:
+            print("Incorrect value.")
     return bool(answer - 1)
 
 
