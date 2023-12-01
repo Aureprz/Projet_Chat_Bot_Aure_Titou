@@ -89,8 +89,8 @@ while True:
     print("4. Pick an interval")
     print("5. select a type of sort")
     print("6. mean on/off")
-    print("7. nb of decimal")
-    print("8. val on/off")
+    print("7. Number of decimal")
+    print("8. Val on/off")
     print("9. Reply result")
     answer = input()
 

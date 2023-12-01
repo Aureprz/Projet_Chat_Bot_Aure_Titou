@@ -76,7 +76,7 @@ def func_sort(dic, type_sort) -> dict:
 
 
 def f_mean(dic_dic) -> dict:
-    """Ggives the average of all values according to the word(s) chosen and the type of result selected"""
+    """Gives the average of all values according to the word(s) chosen and the type of result selected"""
     dico = {}
     nb_doc = len(dic_dic)
     for name in dic_dic:
