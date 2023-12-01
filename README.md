@@ -54,9 +54,9 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
     - ``1``
         Vous permet de choisir entre les differents méthodes de calculs du ou des terme(s) sélectionnés
-      -``tf``
-      -``idf``
-      -``tf-idf``
+          -``tf``
+          -``idf``
+          -``tf-idf``
 
      - ``2``
         Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
