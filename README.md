@@ -1,9 +1,9 @@
 
 # Guide du Chatbot (Partie 1)
 
-Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. Ceci est un projet que nous avons dans
-notre premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du
-projet (sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut
+Bienvenue, ceci est un projet que nous avons dans notre premier semestre à Efrei Paris et s'apparente à un Chatbot. 
+Ce programme ne concerne que la première partie du projet (sur 3). 
+Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut
 faire :
 
 Parmi un certain nombre de fichiers (fichiers texte), ici les discours de présidents français, vous pouvez en choisir
