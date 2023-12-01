@@ -1,5 +1,5 @@
 
-# Guide du Chatbot (Partie 1)
+# Présentation du Chatbot (Partie 1)
 
 Bienvenue, ceci est un projet que nous avons dans notre premier semestre à Efrei Paris et s'apparente à un Chatbot. 
 Ce programme ne concerne que la première partie du projet (sur 3). 
@@ -107,10 +107,6 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
  
 _**Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
 vous renverra à nouveau les 9 options à sélectionner. Sachez que tous les paramètres sont sauvegardés.**_
-## But du programme :
-
-Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
-
 
 ## Todo
 
