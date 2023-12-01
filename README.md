@@ -53,13 +53,13 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
     - ``1``
         Vous permet de choisir entre les différentes méthodes de calcul du ou des terme(s) sélectionnés [(info tf-idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
         - **tf** qui représente la fréquence des termes dans un document:
-            <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*HM0Vcdrx2RApOyjp_ZeW_Q.png" alt="tf" style="opacity: 1;"></div>
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291097793142844/Capture_decran_2023-12-02_003231.png?ex=657ce2be&is=656a6dbe&hm=0f47b247dc90ae3a2b64f0285503c85888cb77b03ab21789f2fafb9a887806f8&" alt="tf" style="opacity: 1;"></div>
 
         - **idf** qui représente la fréquence inverse des documents:
-            <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*A5YGwFpcTd0YTCdgoiHFUw.png" alt="idf" style="opacity: 1;"></div>
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098162233354/Capture_decran_2023-12-02_003326.png?ex=657ce2be&is=656a6dbe&hm=35633c2b1608480bec4bbc5b5113ce64243632f960bca9ab90c838d88c3902a5&" alt="idf" style="opacity: 1;"></div>
 
         - **tf-idf** qui représente l'importance d'un mot:
-            <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*nSqHXwOIJ2fa_EFLTh5KYw.png" alt="tf-idf" style="opacity: 1;"></div>
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098418094150/Capture_decran_2023-12-02_003358.png?ex=657ce2be&is=656a6dbe&hm=d180880784bb07ead2440d1a41a3b8dcee118a9a7c50f531eb12e656e2159284&" alt="tf-idf" style="opacity: 1;"></div>
 
 
      - ``2``
