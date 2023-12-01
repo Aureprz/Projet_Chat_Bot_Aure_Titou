@@ -42,6 +42,15 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
     - ``0``
         Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
+        - Valeur par défaut du programme :
+            - type_value= ``[tf]``
+            - file= ``['%all%']``
+            - word= ``['%all%']``
+            - interval= ``[0, 100]``
+            - sort= ``[descending]``
+            - mean= ``[ON]``
+            - decimal= ``[3]``
+            - value= ``[ON]``
 
     - ``1``
         Vous permet de choisir entre le score tf, le score idf ou le score tf-idf du ou des terme(s) sélectionnés
@@ -73,18 +82,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
     - ``9``
         Vous renvoie le résultat
 
-    - Valeur par défaut du programme :
-    - type_value= ``[tf]``
-    - file= ``['%all%']``
-    - word= ``['%all%']``
-    - interval= ``[0, 100]``
-    - sort= ``[descending]``
-    - mean= ``[ON]``
-    - decimal= ``[3]``
-    - value= ``[ON]`` 
-
-
-
+ 
 * Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
   vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
