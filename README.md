@@ -37,17 +37,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
 ## Guide d'utilisation :
 
-## But du programme :
-
-Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
-
-### Fichiers :
-
-Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.py
-
-### Fonctionnement (du main.py) :
-
-* Vous avez le choix parmi 9 options :
+* aprés le lancement  avez le choix parmi 9 options :
 
     - ``0``
         Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
@@ -78,7 +68,7 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
         Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
 
     - ``8``
-        
+         Vous permet de choisir si vous souhaitez afficher les valeur ou non
 
     - ``9``
         Vous renvoie le résultat
@@ -92,6 +82,11 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
   3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
   précédemment.
+## But du programme :
+
+Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
+
+
 ## Todo
 
 ## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
