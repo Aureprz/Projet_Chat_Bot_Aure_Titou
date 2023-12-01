@@ -87,3 +87,8 @@ def f_mean(dic_dic):
         dico[word] /= nb_doc
     dico = {"mean": dico}
     return dico
+
+
+if __name__ == "__main__":
+    print("Do not run this file.")
+    print("Run ./main.py")

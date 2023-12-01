@@ -64,3 +64,8 @@ def tf_idf(dic_tf, idf):
     """function giving us the TF-IDF matrix for all the words in the files"""
     dic_tf_idf = {i: {j: dic_tf[i][j] * idf[j] for j in dic_tf[i].keys()} for i in dic_tf.keys()}
     return dic_tf_idf
+
+
+if __name__ == "__main__":
+    print("Do not run this file.")
+    print("Run ./main.py")
