@@ -95,7 +95,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
     - ``7``
         Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
-        - ``nb`` nombre de décimales au format ``aeb``: ``nb >= 0``
+        - ``nb`` nombre de décimales au format ex:``1.2e+4`` : ``nb >= 0``
     - ``8``
          Vous permet de choisir si vous souhaitez afficher les valeur ou non
          - ``1`` désactivé
@@ -105,11 +105,11 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         Vous renvoie le résultat de votre sélection 
 
  
-* Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
-  vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
+***Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
+vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
   3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
-  précédemment.
+  précédemment.***
 ## But du programme :
 
 Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
