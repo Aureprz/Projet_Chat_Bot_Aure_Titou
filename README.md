@@ -67,35 +67,42 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
      - ``2``
          Vous permet de sélectionner un ou plusieur discours de président que vous souhaitez étudier. Et vous affiche vos discours déjà selectionner. 
           - ``nom du président`` donnez le nom du président dont vous souhaitez selectionez le discours
-              - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
+          - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
           - ``%all%`` pour selctionner tous les discours
           - ``%end%`` pour terminer la selection
             
     - ``3``
-        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnez.
-           - ``mot`` donnez le mot que vous souhaitez selectionner
-           - ``%all%`` pour selctionner tous les mots du corpus
-           - ``%end%`` pour terminer la selection
+        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnez.  
+        - ``mot`` donnez le mot que vous souhaitez selectionner  
+        - ``%all%`` pour selctionner tous les mots du corpus  
+        - ``%end%`` pour terminer la selection  
 
     - ``4``
-        Vous lance une série de sous-options telles que la valeur minimale et la valeur maximale de l'intervalle
-        souhaitée
+        Vous permet de sélectionner un intervalle dont les bornes sont inclues. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
+        - ``min`` donnez une valeur minimal: ``min >= 0``
+        - ``max`` donnez une valeur maximal : ``max >= min``
 
     - ``5``
-        Ici, vous choisissez dans quel ordre l'affichage va se montrer : soit dans l'ordre croissant ("ascending") soit
+       Vous permet de choisir dans quel ordre seront trier les valeurs afficher à l'écran: soit dans l'ordre croissant ("ascending") soit
         l'ordre décroissant ("descending")
+       - ``1`` par ordre croissant
+       - ``2`` par ordre décroissant
 
     - ``6``
-        Vous permet de faire la moyenne de toutes les valeurs pour chaque élément choisi suivant le type demandé (tf, idf ou tf-idf) et suivant les fichiers sélectionnés
+        Vous permet de faire la moyenne de toutes les valeurs pour chaque élément choisi suivant le type demandé (tf, idf ou tf-idf) et suivant les fichiers sélectionnés.
+        - ``1`` désactivé
+        - ``2`` activé
 
     - ``7``
         Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
-
+        - ``nb`` nombre de décimales: ``nb > 0``
     - ``8``
          Vous permet de choisir si vous souhaitez afficher les valeur ou non
+         - ``1`` désactivé
+         - ``2`` activé
 
     - ``9``
-        Vous renvoie le résultat
+        Vous renvoie le résultat de votre sélection 
 
  
 * Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
