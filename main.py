@@ -1,8 +1,8 @@
-########################################################
-# Name : My first Chatbot (Part 1)                ######
-# Auteurs : Aurélien Perez & Titouan Lenain       ######
-# Version : V 1.0                                 ######
-########################################################
+##################################################################
+# Name : My first Chatbot (Part 1)                          ######
+# Creators : Aurélien Perez & Titouan Lenain (L1 Grp B)     ######
+# Version : V 1.0                                           ######
+##################################################################
 
 ########################################################################################################################
 # importing external functions
@@ -79,7 +79,6 @@ interval = [0, 100]
 decimal = 3
 show_val = True
 type_sort = True
-mean = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:

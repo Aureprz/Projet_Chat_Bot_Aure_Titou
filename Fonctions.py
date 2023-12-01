@@ -12,6 +12,7 @@ def extraire_nom(list_names_files) -> list:
         while not (name[j].isalpha() or name[j].isspace()):
             j -= 1
         list_nom.append(name[:j+1])
+    # Return a list of "cleaned" files name
     return list(list_nom)
 
 
@@ -60,7 +61,7 @@ def deref_dic_dic(dic_dic) -> dict:
     return dic_dic_2
 
 
-def deref_dic_key(dic) -> list:
+def deref_dic_key(dic) -> list:  # Lets you use every key (word) with the %all% command
     list_key = []
     for k in dic.keys():
         list_key.append(k)
@@ -68,13 +69,14 @@ def deref_dic_key(dic) -> list:
 
 
 def func_sort(dic, type_sort) -> dict:
-    """Trier les valeurs à l'intérieur de chaque sous-dictionnaire"""
+    """Sort values within each sub-dictionary"""
     for key in dic:
         dic[key] = dict(sorted(dic[key].items(), key=lambda item: item[1], reverse=type_sort))
     return dic
 
 
 def f_mean(dic_dic) -> dict:
+    """Ggives the average of all values according to the word(s) chosen and the type of result selected"""
     dico = {}
     nb_doc = len(dic_dic)
     for name in dic_dic:

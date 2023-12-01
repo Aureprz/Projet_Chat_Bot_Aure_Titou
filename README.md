@@ -1,36 +1,10 @@
-# English
-Hi. If you're reading this, you probably already know what this program is about. It's a project we have in our first
-semester at Efrei Paris and is kind of a Chatbot. This program's just about the first part of the whole project
-(out of 3). Without further ado, here's what the Chatbot can do in this part :
 
-- Out of a certain amount of files (text files), here these are French presidents' speeches, you can choose one of them
-and get the term frequency for all the words in the file. Also, if you wish to do so, you can get the TF-IDF measure of
-all the words the txt files' directory.
+# Guide du Chatbot (Partie 1)
 
-- If you're more interested in something more specific, the Chatbot can either give you the "less relevant" words
-(TF-IDF = 0) out of all the files, the rarest ones or the ones the president you chose use frequently.
-
-- Furthermore, the Chatbot can give you the presidents who use which word in their speech(es)
-
-GitHub link : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
-
-## User guide :
-
-To complete your treatment search, you must select all 5 options.
-5th option only after you've answered all 4 options. For these 4 options, regardless of the order in which you select
-and answer them, there's no problem.
-Program default value: file=[%all%], word=[%all%] in the interval [0;100] (i.e. all files and words)
-Also, as you may have noticed or will notice, after answering your request, the Chatbot will send you back the 5 options
-to select. Please note that everything is still stored in memory, i.e. if you previous settings and just change the word,
-for example, all you have to do is select the 3rd option and enter the word of your choice; the Chatbot will return the
-solution in the same conditions as before.
-
-
-
-# Français
-Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. C'est un projet que nous avons dans notre
-premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du projet
-(sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut faire :
+Bienvenue. Si vous lisez ceci, vous savez probablement déjà de quoi il s'agit. Ceci est un projet que nous avons dans
+notre premier semestre à Efrei Paris et s'apparente à un Chatbot. Ce programme ne concerne que la première partie du
+projet (sur 3). Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut
+faire :
 
 Parmi un certain nombre de fichiers (fichiers texte), ici les discours de présidents français, vous pouvez en choisir
 un et obtenir le nombre d'occurences de chaque mot dans ce fichier à l'aide de la fonction term_frequency.

@@ -2,6 +2,7 @@ from Fonctions import *
 
 
 def choose_type() -> str:
+    """function letting the user choose what does he want from the Chatbot [tf, idf or tf-idf]"""
     answer = 0
     types = ["tf", "idf", "tf-idf"]
     while not (1 <= answer <= 3):
@@ -109,7 +110,7 @@ def choose_mean() -> bool:
 def choose_decimal() -> str:
     answer = -1
     while answer < 0:
-        print("select number of decimal")
+        print("Select number of decimal :")
         try:
             answer = float(input())
         except ValueError:
@@ -120,7 +121,7 @@ def choose_decimal() -> str:
 def choose_show_val() -> bool:
     answer = 0
     while not (1 <= answer <= 2):
-        print("Choose if you show value :\n1 : For off \n2 : For on")
+        print("Choose if you want me to show you the value :\n1 : For off \n2 : For on")
         try:
             answer = int(input())
         except ValueError:
