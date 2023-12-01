@@ -55,19 +55,22 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
     - ``1``
         Vous permet de choisir entre les differents méthodes de calculs du ou des terme(s) sélectionnés
         - ``tf`` qui représente la fréquence des termes dans un document:
-                    <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
+                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
         - ``idf`` qui représente la fréquence inverse des documents:
-                    <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/864fcfdc0c16344c11509f724f1aa7081cf9f657" alt="idf"></div>
+                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/864fcfdc0c16344c11509f724f1aa7081cf9f657" alt="idf"></div>
         - ``tf-idf`` qui représente l'importance d'un mot:
-                    <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10109d0e60cc9d50a1ea2f189bac0ac29a030a00" alt="tf-idf"></div>
+                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10109d0e60cc9d50a1ea2f189bac0ac29a030a00" alt="tf-idf"></div>
 
 
         
 
      - ``2``
-        Sélectionnez le nom du président dont vous souhaitez étudier le discours en donnant son nom. Si un président a
-        fait plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
-
+         Vous permet de sélectionner un ou plusieur discours de président que vous souhaitez étudier. Et vous affiche vos discours déjà selectionner. 
+          - ``nom du président`` donnez le nom du président dont vous souhaitez selectionez le discours
+              - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
+          - ``%all%`` pour selctionner tous les discours
+          - ``%end%`` pour terminer la selection
+            
     - ``3``
         Donnez autant de mots que vous le souhaitez ou taper "%all%" afin de sélectionner tous les mots possibles
 
