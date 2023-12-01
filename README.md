@@ -52,15 +52,15 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 
     - ``1``
         Vous permet de choisir entre les différentes méthodes de calcul du ou des terme(s) sélectionnés [(info tf-idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
-        - ``tf`` qui représente la fréquence des termes dans un document:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
-        - ``idf`` qui représente la fréquence inverse des documents:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/864fcfdc0c16344c11509f724f1aa7081cf9f657" alt="idf"></div>
-        - ``tf-idf`` qui représente l'importance d'un mot:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10109d0e60cc9d50a1ea2f189bac0ac29a030a00" alt="tf-idf"></div>
+        - **tf** qui représente la fréquence des termes dans un document:
+            <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf" style="opacity: 1;"></div>
 
+        - **idf** qui représente la fréquence inverse des documents:
+        <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/864fcfdc0c16344c11509f724f1aa7081cf9f657" alt="idf" style="opacity: 1;"></div>
 
-        
+        - **tf-idf** qui représente l'importance d'un mot:
+        <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10109d0e60cc9d50a1ea2f189bac0ac29a030a00" alt="tf-idf" style="opacity: 1;"></div>
+
 
      - ``2``
          Vous permet de sélectionner un ou plusieurs discours de présidents que vous souhaitez étudier. Et vous affiche vos discours déjà sélectionnés. 
