@@ -77,6 +77,7 @@ word = deref_dic_key(dic_words)
 files = list_files_names
 interval = [0, 100]
 decimal = 3
+mean = True
 show_val = True
 type_sort = True
 print("Hi. Welcome to this program. What can I do for you ?\n")
