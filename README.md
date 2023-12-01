@@ -105,11 +105,8 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         Vous renvoie le résultat de votre sélection 
 
  
-***Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
-vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
-  souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
-  3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
-  précédemment.***
+_**Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
+vous renverra à nouveau les 9 options à sélectionner. Sachez que tous les paramètres sont sauvegardés.**_
 ## But du programme :
 
 Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
