@@ -63,25 +63,25 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         
 
      - ``2``
-         Vous permet de sélectionner un ou plusieur discours de président que vous souhaitez étudier. Et vous affiche vos discours déjà selectionner. 
-          - ``nom du président`` donnez le nom du président dont vous souhaitez selectionez le discours
+         Vous permet de sélectionner un ou plusieurs discours de présidents que vous souhaitez étudier. Et vous affiche vos discours déjà sélectionnés. 
+          - ``nom du président`` donnez le nom du président dont vous souhaitez sélectionner le discours
           - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
-          - ``%all%`` pour selctionner tous les discours
-          - ``%end%`` pour terminer la selection
+          - ``%all%`` pour sélectionner tous les discours
+          - ``%end%`` pour terminer la sélection
             
     - ``3``
-        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnez.  
-        - ``mot`` donnez le mot que vous souhaitez selectionner  
-        - ``%all%`` pour selctionner tous les mots du corpus  
-        - ``%end%`` pour terminer la selection  
+        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnés.  
+        - ``mot`` donnez le mot que vous souhaitez sélectionner  
+        - ``%all%`` pour sélectionner tous les mots du corpus  
+        - ``%end%`` pour terminer la sélection  
 
     - ``4``
-        Vous permet de sélectionner un intervalle dont les bornes sont inclues. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
-        - ``min`` donnez une valeur minimal: ``min >= 0``
-        - ``max`` donnez une valeur maximal : ``max >= min``
+        Vous permet de sélectionner un intervalle dont les bornes sont incluses. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
+        - ``min`` donnez une valeur minimale : ``min >= 0``
+        - ``max`` donnez une valeur maximale : ``max >= min``
 
     - ``5``
-       Vous permet de choisir dans quel ordre seront trier les valeurs afficher à l'écran: soit dans l'ordre croissant ("ascending") soit
+       Vous permet de choisir dans quel ordre seront triées les valeurs affichées à l'écran: soit dans l'ordre croissant ("ascending") soit
         l'ordre décroissant ("descending")
        - ``1`` par ordre croissant
        - ``2`` par ordre décroissant
@@ -92,10 +92,10 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         - ``2`` activé
 
     - ``7``
-        Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
+        Vous permet de choisir le nombre de décimales attendues pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
         - ``nb`` nombre de décimales au format ex:``1.2e+4`` : ``nb >= 0``
     - ``8``
-         Vous permet de choisir si vous souhaitez afficher les valeur ou non
+         Vous permet de choisir si vous souhaitez afficher les valeurs ou non
          - ``1`` désactivé
          - ``2`` activé
 
