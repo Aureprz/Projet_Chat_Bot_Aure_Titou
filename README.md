@@ -73,7 +73,15 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
     - ``9``
         Vous renvoie le résultat
 
-    - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les fichiers et mots)
+    - Valeur par défaut du programme :
+    - type_value= ``[tf]``
+    - file= ``['%all%']``
+    - word= ``['%all%']``
+    - interval= ``[0, 100]``
+    - sort= ``[descending]``
+    - mean= ``[ON]``
+    - decimal= ``[3]``
+    - value= ``[ON]`` 
 
 
 
