@@ -59,6 +59,7 @@ main.py
 ```
 
 Attention à bien garder à  jour votre code avec `git pull` et  à bien commit les changements avec `git commit`.
+Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip`
 
 ## Guide d'utilisation :
 
