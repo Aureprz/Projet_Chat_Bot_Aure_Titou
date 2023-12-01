@@ -2,7 +2,7 @@
 import os
 
 
-def extraire_nom(list_names_files):
+def extraire_nom(list_names_files) -> list:
     """function to extract the name of each file (speech)"""
     list_nom = []
     for file_name in list_names_files:
@@ -15,13 +15,13 @@ def extraire_nom(list_names_files):
     return list(list_nom)
 
 
-def noms_prenoms(dict_identity, list_noms):
+def noms_prenoms(dict_identity, list_noms) -> dict:
     """function giving the list of first and last names associated with each president"""
     dict_presidents = {i: dict_identity[i] for i in list_noms}
     return dict_presidents
 
 
-def list_of_files(directory, extension):
+def list_of_files(directory, extension) -> list:
     """function that returns each file name entirely in the form of a list"""
     files_names = []
     for filename in os.listdir(directory):
@@ -30,7 +30,7 @@ def list_of_files(directory, extension):
     return files_names
 
 
-def copy_directory(directory1, directory2):
+def copy_directory(directory1, directory2) -> list:
     list_directory2 = []
     for files in os.listdir(directory1):
         with open(os.path.join(directory1, files), "r", encoding='utf-8') as f1, open(os.path.join(directory2, files),
@@ -40,7 +40,7 @@ def copy_directory(directory1, directory2):
     return list_directory2
 
 
-def dict_words(list_path_files):
+def dict_words(list_path_files) -> dict:
     """function that returns a dictionary of each word, in a single copy, with a null value"""
     list_txt = []
     for path_files in list_path_files:
@@ -51,7 +51,7 @@ def dict_words(list_path_files):
     return dict_word
 
 
-def deref_dic_dic(dic_dic):
+def deref_dic_dic(dic_dic) -> dict:
     dic_dic_2 = {}
     for dic in dic_dic:
         dic_dic_2[dic] = {}
@@ -60,21 +60,21 @@ def deref_dic_dic(dic_dic):
     return dic_dic_2
 
 
-def deref_dic_key(dic):
-    dic_2 = []
+def deref_dic_key(dic) -> list:
+    list_key = []
     for k in dic.keys():
-        dic_2.append(k)
-    return dic_2
+        list_key.append(k)
+    return list_key
 
 
-def func_sort(dic, type_sort):
+def func_sort(dic, type_sort) -> dict:
     """Trier les valeurs à l'intérieur de chaque sous-dictionnaire"""
     for key in dic:
         dic[key] = dict(sorted(dic[key].items(), key=lambda item: item[1], reverse=type_sort))
     return dic
 
 
-def f_mean(dic_dic):
+def f_mean(dic_dic) -> dict:
     dico = {}
     nb_doc = len(dic_dic)
     for name in dic_dic:

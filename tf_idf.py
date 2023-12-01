@@ -1,7 +1,7 @@
 from math import log10
 
 
-def minuscule(file_path):
+def minuscule(file_path) -> None:
     """function transforming the text of each file into lowercase letters"""
     with open(file_path, "r", encoding='utf-8') as f1:
         txt = f1.read()
@@ -11,7 +11,7 @@ def minuscule(file_path):
         f1.write(txt)
 
 
-def punctuation(file_path, list_punctuation):
+def punctuation(file_path, list_punctuation) -> None:
     """ function removing each punctuation element, such as commas or hyphens, from files"""
     list_punctuation = "".join(list_punctuation)
     with open(file_path, "r", encoding='utf-8') as f1:
@@ -24,7 +24,7 @@ def punctuation(file_path, list_punctuation):
         f1.write(txt)
 
 
-def stopword(file_path, list_stopword):
+def stopword(file_path, list_stopword) -> None:
     """function to remove words that appear too often (defined by a predefined list called list_stopword)"""
     with open(file_path, "r", encoding='utf-8') as f1:
         text = f1.readline().split()
@@ -33,7 +33,7 @@ def stopword(file_path, list_stopword):
         f1.write(text_c)
 
 
-def term_frequency(name_file_cleaned, dict_word):
+def term_frequency(name_file_cleaned, dict_word) -> dict:
     """TF function calculating the frequency of occurrence of a term in such file"""
     score_tf = dict_word.copy()
     with open(name_file_cleaned, "r", encoding='utf-8') as f1:
@@ -46,7 +46,7 @@ def term_frequency(name_file_cleaned, dict_word):
     return score_tf
 
 
-def inverse_document_frequency(list_dict_term, dict_word):
+def inverse_document_frequency(list_dict_term, dict_word) -> dict:
     """IDF function calculating the importance of a term across all existing files"""
     score_tf = dict_word.copy()
     for dict_term in list_dict_term.values():
@@ -60,7 +60,7 @@ def inverse_document_frequency(list_dict_term, dict_word):
     return score_tf
 
 
-def tf_idf(dic_tf, idf):
+def tf_idf(dic_tf, idf) -> dict:
     """function giving us the TF-IDF matrix for all the words in the files"""
     dic_tf_idf = {i: {j: dic_tf[i][j] * idf[j] for j in dic_tf[i].keys()} for i in dic_tf.keys()}
     return dic_tf_idf

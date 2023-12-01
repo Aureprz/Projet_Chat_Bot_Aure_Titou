@@ -1,7 +1,7 @@
 from Fonctions import *
 
 
-def choose_type():
+def choose_type() -> str:
     answer = 0
     types = ["tf", "idf", "tf-idf"]
     while not (1 <= answer <= 3):
@@ -13,7 +13,7 @@ def choose_type():
     return types[answer-1]
 
 
-def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
+def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names) -> list:
     answer = "%null%"
     file = []
     while True:
@@ -48,25 +48,25 @@ def choose_file(dict_pres, pres_names, dict_pres_files, list_files_names):
         answer = "%null%"
 
 
-def choose_word(dic_words):
+def choose_word(dic_words) -> list:
     word = "%null%"
-    dic_word = []
-    while word != "%end%" or len(dic_word) == 0:
-        print("Your selected words:", dic_word)
+    list_word = []
+    while word != "%end%" or len(list_word) == 0:
+        print("Your selected words:", list_word)
         word = input("Choose word (or '%all%' for all words) and use '%end%' to exit :\n")
         if word == "%all%":
-            dic_word = deref_dic_key(dic_words)
-            return dic_word
-        if word == "%end%" and len(dic_word) == 0:
+            list_word = deref_dic_key(dic_words)
+            return list_word
+        if word == "%end%" and len(list_word) == 0:
             print("Please choose at least a word.")
         elif word not in dic_words.keys():
             print("Word not present in any of the files.")
         else:
-            dic_word.append(word)
-    return dic_word
+            list_word.append(word)
+    return list_word
 
 
-def choose_interval():
+def choose_interval() -> list:
     a, b = -1, -1
     while not 0 <= a:
         print("Please choose a minimal value (value>=0) :")
@@ -84,7 +84,7 @@ def choose_interval():
     return interval
 
 
-def choose_sort():
+def choose_sort() -> bool:
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose the result type :\n1 : For ascending order\n2 : For descending order")
@@ -95,7 +95,7 @@ def choose_sort():
     return bool(answer-1)
 
 
-def choose_mean():
+def choose_mean() -> bool:
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose if somme is on :\n1 : For off \n2 : For on")
@@ -106,7 +106,7 @@ def choose_mean():
     return bool(answer-1)
 
 
-def choose_decimal():
+def choose_decimal() -> str:
     answer = -1
     while answer < 0:
         print("select number of decimal")
@@ -117,7 +117,7 @@ def choose_decimal():
     return answer
 
 
-def choose_show_val():
+def choose_show_val() -> bool:
     answer = 0
     while not (1 <= answer <= 2):
         print("Choose if you show value :\n1 : For off \n2 : For on")
