@@ -52,7 +52,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
     - ``1``
         Vous permet de choisir entre les differents méthodes de calculs du ou des terme(s) sélectionnés
- [info tf_idf](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
+- [info tf_idf](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
         - ``tf`` qui représente la fréquence des termes dans un document:
                   <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
         - ``idf`` qui représente la fréquence inverse des documents:
