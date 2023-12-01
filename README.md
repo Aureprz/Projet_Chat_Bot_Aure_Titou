@@ -47,7 +47,7 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
 
 ### Fonctionnement (du main.py) :
 
-* Vous avez le choix parmi 6 options :
+* Vous avez le choix parmi 9 options :
 
     - ``0``
         Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
@@ -72,6 +72,15 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
         l'ordre décroissant ("descending")
 
     - ``6``
+        Vous permet de faire la moyenne de toutes les valeurs pour chaque élément choisi suivant le type demandé (tf, idf ou tf-idf) et suivant les fichiers sélectionnés
+
+    - ``7``
+        Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
+
+    - ``8``
+        
+
+    - ``9``
         Vous renvoie le résultat
 
     - Valeur par défaut du programme : type=[tf], fichier=[%all%], mot=[%all%], interval [0;100] (soit tous les fichiers et mots)
@@ -79,7 +88,7 @@ Ce programme fonctionne autour de 2 fichiers principaux : main.py et Fonctions.p
 
 
 * Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
-  vous renverra à nouveau les 6 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
+  vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
   souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
   3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
   précédemment.
