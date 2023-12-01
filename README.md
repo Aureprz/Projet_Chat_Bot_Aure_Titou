@@ -42,7 +42,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
     - ``0``
         Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
-        - Valeur par défaut du programme :
+        * Valeur par défaut du programme :
             - type_value= ``[tf]``
             - file= ``['%all%']``
             - word= ``['%all%']``
