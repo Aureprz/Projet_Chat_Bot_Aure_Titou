@@ -28,9 +28,7 @@ Puis, il faut cloner le dépôt :
 git clone https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou.git
 ```
 Et enfin run le fichier:
-```bash
-main.py
-```
+[main.py](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/blob/master/main.py)
 
 Attention à bien garder à  jour votre code avec `git pull` et  à bien commit les changements avec `git commit`.
 Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip`
