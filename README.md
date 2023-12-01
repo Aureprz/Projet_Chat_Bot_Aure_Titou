@@ -95,7 +95,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 
     - ``7``
         Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
-        - ``nb`` nombre de décimales: ``nb > 0``
+        - ``nb`` nombre de décimales au format ``aeb``: ``nb >= 0``
     - ``8``
          Vous permet de choisir si vous souhaitez afficher les valeur ou non
          - ``1`` désactivé
