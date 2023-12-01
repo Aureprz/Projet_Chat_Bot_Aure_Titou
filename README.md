@@ -104,9 +104,9 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 
  
 _**Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot vous renverra à nouveau les 9 options à sélectionner. Sachez que tous les paramètres sont sauvegardés.**_
-## Bug 
+## Bug: 
 Si vous trouvez des bugs n'hésitez pas à les reporter via [issues](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/issues) 
-## Todo
+## Todo:
 
 ## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
 - [Aureprz](https://github.com/Aureprz)
