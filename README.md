@@ -56,10 +56,10 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
             <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*HM0Vcdrx2RApOyjp_ZeW_Q.png" alt="tf" style="opacity: 1;"></div>
 
         - **idf** qui représente la fréquence inverse des documents:
-        <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*A5YGwFpcTd0YTCdgoiHFUw.png" alt="idf" style="opacity: 1;"></div>
+            <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*A5YGwFpcTd0YTCdgoiHFUw.png" alt="idf" style="opacity: 1;"></div>
 
         - **tf-idf** qui représente l'importance d'un mot:
-        <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*nSqHXwOIJ2fa_EFLTh5KYw.png" alt="tf-idf" style="opacity: 1;"></div>
+            <div style="text-align:right"><img src="https://cdn-media-1.freecodecamp.org/images/1*nSqHXwOIJ2fa_EFLTh5KYw.png" alt="tf-idf" style="opacity: 1;"></div>
 
 
      - ``2``
