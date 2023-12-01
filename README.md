@@ -38,7 +38,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
 * aprés le lancement vous avez le choix parmi 9 options :
 
     - ``0``
-        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
+        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionnés, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
         * Valeur par défaut du programme :
             - type_value= ``[tf]``
@@ -51,7 +51,7 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
             - value= ``[ON]``
 
     - ``1``
-        Vous permet de choisir entre les differents méthodes de calculs du ou des terme(s) sélectionnés [(info tf_idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
+        Vous permet de choisir entre les differentes méthodes de calculs du ou des terme(s) sélectionnés [(info tf_idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
         - ``tf`` qui représente la fréquence des termes dans un document:
                   <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
         - ``idf`` qui représente la fréquence inverse des documents:
