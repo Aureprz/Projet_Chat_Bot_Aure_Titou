@@ -22,11 +22,13 @@ main.py
 Attention à bien garder à  jour votre code avec `git pull` et  à bien commit les changements avec `git commit`.
 Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip`
 
-## Guide d'utilisation :
 
 ## But du programme :
 
 Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
+
+
+## Guide d'utilisation :
 
 ### Fichiers :
 
