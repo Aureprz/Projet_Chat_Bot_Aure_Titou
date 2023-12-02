@@ -71,7 +71,7 @@ for file_path in list_files_path:
 dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
 TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
-#
+# initialize default value
 type_value = "tf"
 word = deref_dic_key(dic_words)
 files = list_files_names
@@ -80,6 +80,7 @@ decimal = 3
 mean = True
 show_val = True
 type_sort = True
+
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
@@ -98,29 +99,8 @@ while True:
     if answer == "1":
         type_value = choose_type()
     elif answer == "0":
-        if word == deref_dic_key(dic_words):
-            word_p = ["%all%"]
-        else:
-            word_p = word
-        if files == list_files_names:
-            files_p = ["%all%"]
-        else:
-            files_p = files
-        if type_sort is False:
-            type_sort_p = "[ascending]"
-        else:
-            type_sort_p = "[descending]"
-        if mean is False:
-            mean_p = "[OFF]"
-        else:
-            mean_p = "[ON]"
-        if show_val is False:
-            show_val_p = "[OFF]"
-        else:
-            show_val_p = "[ON]"
-        print("type_value= [" + type_value + "]\nfile=", files_p, "\nword=", word_p, "\ninterval=", interval,
-              "\nsort=", type_sort_p, "\nmean=", mean_p, "\ndecimal= [" + str(decimal) + "]\nvalue=", show_val_p,
-              "\n" * 2)
+        choose_setting(type_value, word, dic_words, files, list_files_names, interval, type_sort, mean, show_val,
+                       decimal)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":

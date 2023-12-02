@@ -1,6 +1,17 @@
 from Fonctions import *
 
 
+def choose_setting(type_value, word, dic_words, files, list_files_names, interval, type_sort, mean, show_val, decimal):
+    word_p = ["%all%"] if word == deref_dic_key(dic_words) else word
+    files_p = ["%all%"] if files == list_files_names else files
+    type_sort_p = "[ascending]" if not type_sort else "[descending]"
+    mean_p = "[OFF]" if not mean else "[ON]"
+    show_val_p = "[OFF]" if not show_val else "[ON]"
+
+    print(f"type_value= [{type_value}]\nfile= {files_p}\nword= {word_p}\ninterval= {interval}\nsort= {type_sort_p}\n"
+          f"mean= {mean_p}\ndecimal= [{decimal}]\nvalue= {show_val_p}\n")
+
+
 def choose_type() -> str:
     """function letting the user choose what does he want from the Chatbot [tf, idf or tf-idf]"""
     answer = 0
@@ -112,7 +123,7 @@ def choose_decimal() -> str:
     while answer < 0:
         print("Select number of decimal :")
         try:
-            answer = float(input())
+            answer = int(input())
         except ValueError:
             print("Incorrect value.")
     return answer
