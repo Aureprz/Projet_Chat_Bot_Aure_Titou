@@ -68,8 +68,8 @@ for i in list_files_path:
 dic_words = dict_words(list_files_path)
 for file_path in list_files_path:
     dict_dict_TF[os.path.basename(file_path)] = term_frequency(file_path, dic_words)
-dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
-TF_IDF = tf_idf(dict_dict_TF, dic_if)
+dic_idf = inverse_document_frequency(dict_dict_TF, dic_words)
+TF_IDF = tf_idf(dict_dict_TF, dic_idf)
 
 # initialize default value
 m_type_value = "tf"
@@ -116,7 +116,7 @@ while True:
     elif answer == "8":
         show_val = choose_show_val()
     elif answer == "9":
-        reply(m_type_value, m_word, m_files, dict_dict_TF, dic_if, TF_IDF, m_interval, m_type_sort, m_mean, m_decimal, m_show_val)
+        reply(m_type_value, m_word, m_files, dict_dict_TF, dic_idf, TF_IDF, m_interval, m_type_sort, m_mean, m_decimal, m_show_val)
     else:
         print("Answer not defined.")
     answer = ""
