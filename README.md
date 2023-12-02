@@ -1,5 +1,5 @@
 
-# Guide du Chatbot (Partie 1)
+# Présentation du Chatbot (Partie 1)
 
 Bienvenue, ceci est un projet que nous avons dans notre premier semestre à Efrei Paris et s'apparente à un Chatbot. 
 Ce programme ne concerne que la première partie du projet (sur 3). 
@@ -28,19 +28,17 @@ Puis, il faut cloner le dépôt :
 git clone https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou.git
 ```
 Et enfin run le fichier:
-```bash
-main.py
-```
+-  [main.py](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/blob/master/main.py)
 
 Attention à bien garder à  jour votre code avec `git pull` et  à bien commit les changements avec `git commit`.
-Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip`
+Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pip`
 
 ## Guide d'utilisation :
 
-* aprés le lancement  avez le choix parmi 9 options :
+* aprés le lancement vous avez le choix parmi 9 options :
 
     - ``0``
-        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionner, le Chatbot vous renverra la valeur par
+        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionnés, le Chatbot vous renverra la valeur par
         défaut (vous l'avez après l'explication des 6 options)
         * Valeur par défaut du programme :
             - type_value= ``[tf]``
@@ -53,37 +51,37 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
             - value= ``[ON]``
 
     - ``1``
-        Vous permet de choisir entre les differents méthodes de calculs du ou des terme(s) sélectionnés
-        - ``tf`` qui représente la fréquence des termes dans un document:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd4f8a91dd0d28a11c00c94a13a315a5b49a8070" alt="tf"></div>
-        - ``idf`` qui représente la fréquence inverse des documents:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/864fcfdc0c16344c11509f724f1aa7081cf9f657" alt="idf"></div>
-        - ``tf-idf`` qui représente l'importance d'un mot:
-                  <div style="text-align:right"><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10109d0e60cc9d50a1ea2f189bac0ac29a030a00" alt="tf-idf"></div>
+        Vous permet de choisir entre les différentes méthodes de calcul du ou des terme(s) sélectionnés [(info tf-idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
+        - **tf** qui représente la fréquence des termes dans un document:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291097793142844/Capture_decran_2023-12-02_003231.png?ex=657ce2be&is=656a6dbe&hm=0f47b247dc90ae3a2b64f0285503c85888cb77b03ab21789f2fafb9a887806f8&" alt="tf" style="opacity: 1;"></div>
 
+        - **idf** qui représente la fréquence inverse des documents:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098162233354/Capture_decran_2023-12-02_003326.png?ex=657ce2be&is=656a6dbe&hm=35633c2b1608480bec4bbc5b5113ce64243632f960bca9ab90c838d88c3902a5&" alt="idf" style="opacity: 1;"></div>
 
-        
+        - **tf-idf** qui représente l'importance d'un mot:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098418094150/Capture_decran_2023-12-02_003358.png?ex=657ce2be&is=656a6dbe&hm=d180880784bb07ead2440d1a41a3b8dcee118a9a7c50f531eb12e656e2159284&" alt="tf-idf" style="opacity: 1;"></div>
+
 
      - ``2``
-         Vous permet de sélectionner un ou plusieur discours de président que vous souhaitez étudier. Et vous affiche vos discours déjà selectionner. 
-          - ``nom du président`` donnez le nom du président dont vous souhaitez selectionez le discours
+         Vous permet de sélectionner un ou plusieurs discours de présidents que vous souhaitez étudier. Et vous affiche vos discours déjà sélectionnés. 
+          - ``nom du président`` donnez le nom du président dont vous souhaitez sélectionner le discours
           - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
-          - ``%all%`` pour selctionner tous les discours
-          - ``%end%`` pour terminer la selection
+          - ``%all%`` pour sélectionner tous les discours
+          - ``%end%`` pour terminer la sélection
             
     - ``3``
-        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnez.  
-        - ``mot`` donnez le mot que vous souhaitez selectionner  
-        - ``%all%`` pour selctionner tous les mots du corpus  
-        - ``%end%`` pour terminer la selection  
+        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnés.  
+        - ``mot`` donnez le mot que vous souhaitez sélectionner  
+        - ``%all%`` pour sélectionner tous les mots du corpus  
+        - ``%end%`` pour terminer la sélection  
 
     - ``4``
-        Vous permet de sélectionner un intervalle dont les bornes sont inclues. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
-        - ``min`` donnez une valeur minimal: ``min >= 0``
-        - ``max`` donnez une valeur maximal : ``max >= min``
+        Vous permet de sélectionner un intervalle dont les bornes sont incluses. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
+        - ``min`` donnez une valeur minimale : ``min >= 0``
+        - ``max`` donnez une valeur maximale : ``max >= min``
 
     - ``5``
-       Vous permet de choisir dans quel ordre seront trier les valeurs afficher à l'écran: soit dans l'ordre croissant ("ascending") soit
+       Vous permet de choisir dans quel ordre seront triées les valeurs affichées à l'écran: soit dans l'ordre croissant ("ascending") soit
         l'ordre décroissant ("descending")
        - ``1`` par ordre croissant
        - ``2`` par ordre décroissant
@@ -94,10 +92,10 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         - ``2`` activé
 
     - ``7``
-        Vous permet de choisir le nombre de décimales attendu pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
-        - ``nb`` nombre de décimales: ``nb > 0``
+        Vous permet de choisir le nombre de décimales attendues pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
+        - ``nb`` nombre de décimales au format ex:``1.2e+4`` : ``nb >= 0``
     - ``8``
-         Vous permet de choisir si vous souhaitez afficher les valeur ou non
+         Vous permet de choisir si vous souhaitez afficher les valeurs ou non
          - ``1`` désactivé
          - ``2`` activé
 
@@ -105,17 +103,10 @@ Si vous rencontrez des problemes vous pouvez faire un `pip install --upgrade pip
         Vous renvoie le résultat de votre sélection 
 
  
-* Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot
-  vous renverra à nouveau les 9 options à sélectionner. Sachez que tout est encore en mémoire, c'est-à-dire que si vous
-  souhaitez garder les paramètres précédents et seulement changer de mot par exemple, vous n'avez qu'à sélectionner la
-  3ème option et donner le mot de votre choix ; le Chatbot vous renverra la solution dans les mêmes conditions que
-  précédemment.
-## But du programme :
-
-Le principe de ce programme est de créer une sorte de Chatbot. Il traite dans cette 1ère partie le traitement de texte.
-
-
-## Todo
+_**Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot vous renverra à nouveau les 9 options à sélectionner. Sachez que tous les paramètres sont sauvegardés.**_
+## Bug: 
+Si vous trouvez des bugs n'hésitez pas à les reporter via [issues](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/issues) 
+## Todo:
 
 ## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
 - [Aureprz](https://github.com/Aureprz)
