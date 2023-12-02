@@ -72,14 +72,14 @@ dic_if = inverse_document_frequency(dict_dict_TF, dic_words)
 TF_IDF = tf_idf(dict_dict_TF, dic_if)
 
 # initialize default value
-type_value = "tf"
-word = deref_dic_key(dic_words)
-files = list_files_names
-interval = [0, 100]
-decimal = 3
-mean = True
-show_val = True
-type_sort = True
+m_type_value = "tf"
+m_word = deref_dic_key(dic_words)
+m_files = list_files_names
+m_interval = [0, 100]
+m_decimal = 3
+m_mean = True
+m_show_val = True
+m_type_sort = True
 
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
@@ -99,8 +99,8 @@ while True:
     if answer == "1":
         type_value = choose_type()
     elif answer == "0":
-        choose_setting(type_value, word, dic_words, files, list_files_names, interval, type_sort, mean, show_val,
-                       decimal)
+        choose_setting(m_type_value, m_word, dic_words, m_files, list_files_names, m_interval, m_type_sort, m_mean, m_show_val,
+                       m_decimal)
     elif answer == "2":
         files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
     elif answer == "3":
@@ -116,7 +116,7 @@ while True:
     elif answer == "8":
         show_val = choose_show_val()
     elif answer == "9":
-        reply(type_value, word, files, dict_dict_TF, dic_if, TF_IDF, interval, type_sort, mean, decimal, show_val)
+        reply(m_type_value, m_word, m_files, dict_dict_TF, dic_if, TF_IDF, m_interval, m_type_sort, m_mean, m_decimal, m_show_val)
     else:
         print("Answer not defined.")
     answer = ""
