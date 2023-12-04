@@ -109,5 +109,5 @@ Si vous trouvez des bugs n'hésitez pas à les reporter via [issues](https://git
 ## Todo:
 
 ## [Contributeurs](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/settings/access)
-- [Aureprz](https://github.com/Aureprz)
-- [Artchhh](https://github.com/Artchhh)
+- [Aurelien Perez](https://github.com/Aureprz)
+- [Titouan Lenain](https://github.com/Artchhh)
