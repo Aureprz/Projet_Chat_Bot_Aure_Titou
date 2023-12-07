@@ -61,9 +61,10 @@ with open("stop_words_french.txt", "r", encoding='utf-8') as f1:
 # clear files
 list_files_path = copy_directory(directory_base, directory_clear)
 for i in list_files_path:
-    minuscule(i)
-    punctuation(i, list_punctuation)
-
+    text = file_to_str(i)
+    text = text.lower()
+    text = punctuation(text, list_punctuation)
+    str_to_file(text, i)
 # create TF-IDF
 dic_words = dict_words(list_files_path)
 for file_path in list_files_path:

@@ -1,43 +1,32 @@
 from math import log10
+from Fonctions import *
 
 
-def minuscule(file_path) -> None:
+def minuscule(txt) -> str:
     """function transforming the text of each file into lowercase letters"""
-    with open(file_path, "r", encoding='utf-8') as f1:
-        txt = f1.read()
-    translation_table = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
-    txt = txt.translate(translation_table)
-    with open(file_path, "w", encoding='utf-8') as f1:
-        f1.write(txt)
+    txt = txt.lower()
+    return txt
 
 
-def punctuation(file_path, list_punctuation) -> None:
+def punctuation(txt, list_punctuation) -> str:
     """ function removing each punctuation element, such as commas or hyphens, from files"""
     list_punctuation = "".join(list_punctuation)
-    with open(file_path, "r", encoding='utf-8') as f1:
-        txt = f1.read()
-        translation_table = str.maketrans(list_punctuation, " " * len(list_punctuation))
-        txt = txt.translate(translation_table)
-        txt = " ".join(txt.split())
-
-    with open(file_path, "w", encoding='utf-8') as f1:
-        f1.write(txt)
+    translation_table = str.maketrans(list_punctuation, " " * len(list_punctuation))
+    txt = txt.translate(translation_table)
+    txt = " ".join(txt.split())
+    return txt
 
 
-def stopword(file_path, list_stopword) -> None:
+def stopword(text, list_stopword) -> str:
     """function to remove words that appear too often (defined by a predefined list called list_stopword)"""
-    with open(file_path, "r", encoding='utf-8') as f1:
-        text = f1.readline().split()
-        text_c = " ".join(word for word in text if word not in list_stopword)
-    with open(file_path, "w", encoding='utf-8') as f1:
-        f1.write(text_c)
+    text_c = " ".join(word for word in text if word not in list_stopword)
+    return text_c
 
 
 def term_frequency(name_file_cleaned, dict_word) -> dict:
     """TF function calculating the frequency of occurrence of a term in such file"""
     score_tf = dict_word.copy()
-    with open(name_file_cleaned, "r", encoding='utf-8') as f1:
-        list_txt = f1.read().split(" ")
+    list_txt = file_to_str(name_file_cleaned).split(" ")
     for i in list_txt:
         score_tf[i] = score_tf[i]+1
     for word, val in score_tf.items():
