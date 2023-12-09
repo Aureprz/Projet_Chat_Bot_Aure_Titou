@@ -1,6 +1,6 @@
 
 import os
-
+import copy
 
 def extraire_nom(list_names_files) -> list:
     """function to extract the name of each file (speech)"""
@@ -45,12 +45,11 @@ def dict_words(list_path_files) -> dict:
     """function that returns a dictionary of each word, in a single copy, with a null value"""
     list_txt = []
     for path_files in list_path_files:
-        with open(path_files, "r", encoding='utf-8') as f1:
-            list_txt += f1.read().split(" ")
+        txt = file_to_str(path_files)
+        list_txt += txt.split()
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
-
 
 
 
