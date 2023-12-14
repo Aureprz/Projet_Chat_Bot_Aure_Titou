@@ -1,6 +1,6 @@
 
 import os
-
+import copy
 
 def extraire_nom(list_names_files) -> list:
     """function to extract the name of each file (speech)"""
@@ -45,11 +45,13 @@ def dict_words(list_path_files) -> dict:
     """function that returns a dictionary of each word, in a single copy, with a null value"""
     list_txt = []
     for path_files in list_path_files:
-        with open(path_files, "r", encoding='utf-8') as f1:
-            list_txt += f1.read().split(" ")
+        txt = file_to_str(path_files)
+        list_txt += txt.split()
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
+
+
 
 
 def deref_dic_dic(dic_dic) -> dict:
@@ -76,7 +78,9 @@ def func_sort(dic, type_sort) -> dict:
 
 
 def f_mean(dic_dic) -> dict:
-    """Gives the average of all values according to the word(s) chosen and the type of result selected"""
+    """
+    Gives the average of all values according to the word(s) chosen and the type of result selected
+    """
     dico = {}
     nb_doc = len(dic_dic)
     for name in dic_dic:
@@ -89,6 +93,17 @@ def f_mean(dic_dic) -> dict:
         dico[word] /= nb_doc
     dico = {"mean": dico}
     return dico
+
+
+def file_to_str(file_path):
+    with open(file_path, "r", encoding='utf-8') as f1:
+        txt = f1.read()
+    return txt
+
+
+def str_to_file(chaine, file_path):
+    with open(file_path, "w", encoding='utf-8') as f1:
+        f1.write(chaine)
 
 
 if __name__ == "__main__":

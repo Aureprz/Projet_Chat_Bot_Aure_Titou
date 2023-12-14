@@ -118,7 +118,7 @@ def choose_mean() -> bool:
     return bool(answer-1)
 
 
-def choose_decimal() -> str:
+def choose_decimal() -> int:
     answer = -1
     while answer < 0:
         print("Select number of decimal :")
