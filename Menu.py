@@ -189,3 +189,4 @@ def reply(type_value, word, files, dict_dict_tf, dict_idf, dict_tf_idf, interval
 if __name__ == "__main__":
     print("Do not run this file.")
     print("Run ./main.py")
+

@@ -109,3 +109,4 @@ def str_to_file(chaine, file_path):
 if __name__ == "__main__":
     print("Do not run this file.")
     print("Run ./main.py")
+
