@@ -75,7 +75,7 @@ m_decimal = 3
 m_mean = True
 m_show_val = True
 m_type_sort = True
-test = input("Entrez une phrase.")
+test = input("Give me a sentence :")
 question_global(test, dic_words, dict_idf)
 
 print("Hi. Welcome to this program. What can I do for you ?\n")
