@@ -69,3 +69,4 @@ list_punctuation1 = [
 test = input("Give me a sentence :")
 question_global(test, dict_word, dict_idf)
 """
+
