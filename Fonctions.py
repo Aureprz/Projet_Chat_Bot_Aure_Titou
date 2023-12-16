@@ -1,6 +1,6 @@
 
 import os
-import copy
+
 
 def extraire_nom(list_names_files) -> list:
     """function to extract the name of each file (speech)"""
@@ -50,8 +50,6 @@ def dict_words(list_path_files) -> dict:
     set_words = set(list_txt)
     dict_word = dict.fromkeys(set_words, 0)
     return dict_word
-
-
 
 
 def deref_dic_dic(dic_dic) -> dict:
@@ -104,6 +102,12 @@ def file_to_str(file_path):
 def str_to_file(chaine, file_path):
     with open(file_path, "w", encoding='utf-8') as f1:
         f1.write(chaine)
+
+
+def equivalent_str(name_file, path_directory):
+    path_file = os.path.join(path_directory, name_file,)
+    text = file_to_str(path_file)
+    return text
 
 
 if __name__ == "__main__":

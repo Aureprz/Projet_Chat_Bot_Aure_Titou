@@ -9,15 +9,14 @@
 ########################################################################################################################
 # import os
 from Fonctions import *
-from Menu import *
 from tf_idf import *
 from FunctionsPart1 import *
 ########################################################################################################################
 # VARIABLES
 ########################################################################################################################
 # directory containing all the files to analyze
-directory_base = os.path.realpath("./speeches-20231116")
-directory_clear = os.path.realpath("./cleaned")
+directory_base = os.path.realpath("speeches-20231116")
+directory_clear = os.path.realpath("cleaned")
 
 # list of file names
 list_files_names = list_of_files(directory_base, "txt")
@@ -41,17 +40,10 @@ dict_pres_files = {list_files_names[i]: extraire_nom(list_files_names)[i] for i 
 # dictionaire de dictionaire tf
 dict_dict_TF = {}
 
-# list of stopword (not important word)
-list_stopword = []
 
 ########################################################################################################################
 # MAIN PROGRAM
 ########################################################################################################################
-# recover the stop words list in the folder
-
-with open("stop_words_french.txt", "r", encoding='utf-8') as f1:
-    for line in f1:
-        list_stopword.append(line[:-1])
 
 # clear files
 list_files_path = copy_directory(directory_base, directory_clear)
@@ -64,56 +56,17 @@ dic_words = dict_words(list_files_path)
 for file_path in list_files_path:
     dict_dict_TF[os.path.basename(file_path)] = term_frequency(dic_words, file_path)
 dict_idf = inverse_document_frequency(dic_words, dict_dict_TF)
-TF_IDF = tf_idf(dict_idf, dict_dict_TF)
+dict_dict_tf_idf = tf_idf(dict_idf, dict_dict_TF)
 
-# initialize default value
-m_type_value = "tf"
-m_word = deref_dic_key(dic_words)
-m_files = list_files_names
-m_interval = [0, 100]
-m_decimal = 3
-m_mean = True
-m_show_val = True
-m_type_sort = True
-test = input("Entrez une phrase.")
-question_global(test, dic_words, dict_idf)
 
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
     print("0. Settings")
     print("1. Select a type of value")
-    print("2. Select a file")
-    print("3. Pick a word")
-    print("4. Pick an interval")
-    print("5. Select a type of sort")
-    print("6. Mean on/off")
-    print("7. Number of decimal")
-    print("8. Val on/off")
-    print("9. Reply result")
     answer = input()
 
     if answer == "1":
-        type_value = choose_type()
-    elif answer == "0":
-        choose_setting(m_type_value, m_word, dic_words, m_files, list_files_names, m_interval, m_type_sort, m_mean,
-                       m_show_val, m_decimal)
-    elif answer == "2":
-        files = choose_file(dict_pres, pres_names, dict_pres_files, list_files_names)
-    elif answer == "3":
-        word = choose_word(dic_words)
-    elif answer == "4":
-        interval = choose_interval()
-    elif answer == "5":
-        type_sort = choose_sort()
-    elif answer == "6":
-        mean = choose_mean()
-    elif answer == "7":
-        decimal = choose_decimal()
-    elif answer == "8":
-        show_val = choose_show_val()
-    elif answer == "9":
-        reply(m_type_value, m_word, m_files, dict_dict_TF, dict_idf, TF_IDF, m_interval, m_type_sort, m_mean, m_decimal,
-              m_show_val)
+        print("noting")
     else:
         print("Answer not defined.")
