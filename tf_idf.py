@@ -84,7 +84,7 @@ def scalar_product(dict_a, dict_b):
     return product_ab
 
 
-def norm_vector(dict_a):
+def norm_vector(dict_a) -> float:
     norm = 0
     for val in dict_a:
         norm += val**2
@@ -96,7 +96,23 @@ def cosine_similarity(product_ab, norm_a, norm_b):
     cosine = (product_ab / (norm_b * norm_a))
     return cosine
 
+
+def file_pertinence(dict_tf_idf_a, dict_dict_tf_idf):
+    dict_simil = {}
+    norm_a = norm_vector(dict_tf_idf_a)
+    for name, dict_tf_idf_b in dict_dict_tf_idf.items():
+        norm_b = norm_vector(dict_tf_idf_b)
+        product_scalar_ab = scalar_product(dict_tf_idf_a, dict_tf_idf_b)
+        dict_simil[name] = cosine_similarity(product_scalar_ab, norm_b, norm_a)
+    sim_max = max(dict_simil, key=dict_simil.get)
+    return sim_max
+
+
+def max_score(dict_tf_idf):
+    max_tf_idf = max(dict_tf_idf, key=dict_tf_idf.get)
+    return max_tf_idf
+
+
 if __name__ == "__main__":
     print("Do not run this file.")
     print("Run ./main.py")
-
