@@ -71,4 +71,4 @@ while True:
     else:
         txt_q = input("print a question ?")
         print(question_global(txt_q,dict_word, dict_idf,dict_dict_tf_idf,directory_base)
-
+    answer = ""

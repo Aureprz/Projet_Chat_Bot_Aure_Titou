@@ -102,6 +102,8 @@ def humanization_answer(txt_q,phrase):
         start = "Oui, bien sûr!"
     answer = start + phrase + "."
     return answer
+
+
 def question_global(txt_q, dict_word, dict_idf_1, dict_dict_tf_idf, directory_base_):
     tf_idf_q = f_tf_idf_q(txt_q, dict_word, dict_idf_1)
     sim_max_name = file_pertinence(tf_idf_q, dict_dict_tf_idf)
