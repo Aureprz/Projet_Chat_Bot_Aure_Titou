@@ -13,7 +13,7 @@ Ce programme se base énormément sur les notions de score TF, IDF et de matrice
   - **tf** qui représente la fréquence des termes dans un document:
             <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291097793142844/Capture_decran_2023-12-02_003231.png?ex=657ce2be&is=656a6dbe&hm=0f47b247dc90ae3a2b64f0285503c85888cb77b03ab21789f2fafb9a887806f8&" alt="tf" style="opacity: 1;"></div>
 
-  - **idf** qui représente la fréquence inverse des documents:
+  - **idf** qui représente la fréquence inverse d'un terme des documents, c'est-à-dire son importance dans un ensemble de documents:
             <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098162233354/Capture_decran_2023-12-02_003326.png?ex=657ce2be&is=656a6dbe&hm=35633c2b1608480bec4bbc5b5113ce64243632f960bca9ab90c838d88c3902a5&" alt="idf" style="opacity: 1;"></div>
 
   - **tf-idf** qui représente l'importance d'un mot à travers un document:
