@@ -55,7 +55,7 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
         
 
 - ``2``
-        Le chatbot vous répondre de manière autonome, toujours dans la thématique du traitement de textes. Par exemple,  les scores TF et IDF ou la matrice TF-IDF d'un document.
+        Le chatbot vous répondra de manière autonome, toujours dans la thématique du traitement de textes. Par exemple,  les scores TF et IDF ou la matrice TF-IDF d'un document.
 
 
         
