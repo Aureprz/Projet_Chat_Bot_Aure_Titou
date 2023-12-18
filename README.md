@@ -1,24 +1,27 @@
 
-# Présentation du Chatbot (Partie 1)
+# Présentation du Chatbot
 
 Bienvenue, ceci est un projet que nous avons dans notre premier semestre à Efrei Paris et s'apparente à un Chatbot. 
 Ce programme ne concerne que la première partie du projet (sur 3). 
 Ici, nous nous focalisons sur le traitement de texte. Sans plus attendre, voici ce que le Chatbot peut
 faire :
 
-Parmi un certain nombre de fichiers (fichiers texte), ici les discours de présidents français, vous pouvez en choisir
-un et obtenir le nombre d'occurences de chaque mot dans ce fichier à l'aide de la fonction term_frequency.
-de tous et obtenir la mesure TF-IDF pour tous les mots du fichier. De même, si vous le souhaitez, vous pouvez obtenir le
-TF-IDF de tous les mots du répertoire des fichiers txt.
+De nombreuses options sont disponibles.
 
-- Si vous êtes plus intéressé par quelque chose de plus précis, le Chatbot peut vous donner les mots les moins
-pertinents (TF-IDF = 0) de tous les fichiers, soit les plus rares, soit ceux que le président choisi utilise
-fréquemment.
+Ce programme se base énormément sur les notions de score TF, IDF et de matrice TF-IDF. Voici la définition de ces termes :
 
-- De plus, le Chatbot peut vous donner les présidents qui ont, pour point commun, tous utilisé le mot de votre choix
-dans leur(s) discours.
+  - **tf** qui représente la fréquence des termes dans un document:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291097793142844/Capture_decran_2023-12-02_003231.png?ex=657ce2be&is=656a6dbe&hm=0f47b247dc90ae3a2b64f0285503c85888cb77b03ab21789f2fafb9a887806f8&" alt="tf" style="opacity: 1;"></div>
+
+    - **idf** qui représente la fréquence inverse des documents:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098162233354/Capture_decran_2023-12-02_003326.png?ex=657ce2be&is=656a6dbe&hm=35633c2b1608480bec4bbc5b5113ce64243632f960bca9ab90c838d88c3902a5&" alt="idf" style="opacity: 1;"></div>
+
+    - **tf-idf** qui représente l'importance d'un mot à travers un document:
+            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098418094150/Capture_decran_2023-12-02_003358.png?ex=657ce2be&is=656a6dbe&hm=d180880784bb07ead2440d1a41a3b8dcee118a9a7c50f531eb12e656e2159284&" alt="tf-idf" style="opacity: 1;"></div>
 
 Lien GitHub : https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou
+
+
 
 ## Guide installation et lancement :
 
@@ -35,75 +38,22 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 
 ## Guide d'utilisation :
 
-* aprés le lancement vous avez le choix parmi 9 options :
+* aprés le lancement vous avez le choix parmi 2 options :
 
-    - ``0``
-        Vous donne les paramètres choisis. Si vous n'en avez pas sélectionnés, le Chatbot vous renverra la valeur par
-        défaut (vous l'avez après l'explication des 6 options)
-        * Valeur par défaut du programme :
-            - type_value= ``[tf]``
-            - file= ``['%all%']``
-            - word= ``['%all%']``
-            - interval= ``[0, 100]``
-            - sort= ``[descending]``
-            - mean= ``[ON]``
-            - decimal= ``[3]``
-            - value= ``[ON]``
+- ``1``
+         Vous pouvez choisir entre 5 options. Le chatbot vous répondra de manière automatique et basique.
+          - ``1`` donne la liste des mots considérés comme moins importants dans l'ensemble du corpus (TF-IDF = 0)
+          - ``2`` affiche les n mots dont le score TF-IDF est le plus élevé, avec n >= 1
+          - ``3`` montre les mots les plus répétés par le président Chirac, hormi les plus répétés
+          - ``4`` donne la liste des présidents qui ont prononcé le mot "Nation" au moins une fois
+          - ``5`` montre la liste des présidents ayant parlé du climat/écologie
+        
 
-    - ``1``
-        Vous permet de choisir entre les différentes méthodes de calcul du ou des terme(s) sélectionnés [(info tf-idf)](https://en.m.wikipedia.org/wiki/Tf%E2%80%93idf)
-        - **tf** qui représente la fréquence des termes dans un document:
-            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291097793142844/Capture_decran_2023-12-02_003231.png?ex=657ce2be&is=656a6dbe&hm=0f47b247dc90ae3a2b64f0285503c85888cb77b03ab21789f2fafb9a887806f8&" alt="tf" style="opacity: 1;"></div>
-
-        - **idf** qui représente la fréquence inverse des documents:
-            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098162233354/Capture_decran_2023-12-02_003326.png?ex=657ce2be&is=656a6dbe&hm=35633c2b1608480bec4bbc5b5113ce64243632f960bca9ab90c838d88c3902a5&" alt="idf" style="opacity: 1;"></div>
-
-        - **tf-idf** qui représente l'importance d'un mot:
-            <div style="text-align:right"><img src="https://cdn.discordapp.com/attachments/1171831701677293568/1180291098418094150/Capture_decran_2023-12-02_003358.png?ex=657ce2be&is=656a6dbe&hm=d180880784bb07ead2440d1a41a3b8dcee118a9a7c50f531eb12e656e2159284&" alt="tf-idf" style="opacity: 1;"></div>
+- ``2``
+        Le chatbot vous répondre de manière autonome, toujours dans la thématique du traitement de textes. Par exemple,  les scores TF et IDF ou la matrice TF-IDF d'un document.
 
 
-     - ``2``
-         Vous permet de sélectionner un ou plusieurs discours de présidents que vous souhaitez étudier. Et vous affiche vos discours déjà sélectionnés. 
-          - ``nom du président`` donnez le nom du président dont vous souhaitez sélectionner le discours
-          - ``numéro`` si un président a  plus d'un discours, le programme vous lance une sous-option afin de sélectionner le discours spécifiquement
-          - ``%all%`` pour sélectionner tous les discours
-          - ``%end%`` pour terminer la sélection
-            
-    - ``3``
-        Vous permet de filtrer le résultat en ne gardant que les mots sélectionnés.  
-        - ``mot`` donnez le mot que vous souhaitez sélectionner  
-        - ``%all%`` pour sélectionner tous les mots du corpus  
-        - ``%end%`` pour terminer la sélection  
-
-    - ``4``
-        Vous permet de sélectionner un intervalle dont les bornes sont incluses. Afin de filtrer les scores qui n'appartiennent pas à cet intervalle.
-        - ``min`` donnez une valeur minimale : ``min >= 0``
-        - ``max`` donnez une valeur maximale : ``max >= min``
-
-    - ``5``
-       Vous permet de choisir dans quel ordre seront triées les valeurs affichées à l'écran: soit dans l'ordre croissant ("ascending") soit
-        l'ordre décroissant ("descending")
-       - ``1`` par ordre croissant
-       - ``2`` par ordre décroissant
-
-    - ``6``
-        Vous permet de faire la moyenne de toutes les valeurs pour chaque élément choisi suivant le type demandé (tf, idf ou tf-idf) et suivant les fichiers sélectionnés.
-        - ``1`` désactivé
-        - ``2`` activé
-
-    - ``7``
-        Vous permet de choisir le nombre de décimales attendues pour le résultat (s'applique à chaque valeur en fonction de chaque fichier choisi)
-        - ``nb`` nombre de décimales au format ex:``1.2e+4`` : ``nb >= 0``
-    - ``8``
-         Vous permet de choisir si vous souhaitez afficher les valeurs ou non
-         - ``1`` désactivé
-         - ``2`` activé
-
-    - ``9``
-        Vous renvoie le résultat de votre sélection 
-
- 
-_**Aussi, comme vous avez pu le remarquer ou comme vous le remarquerez, après avoir répondu à votre demande, le Chatbot vous renverra à nouveau les 9 options à sélectionner. Sachez que tous les paramètres sont sauvegardés.**_
+        
 ## Bug: 
 Si vous trouvez des bugs n'hésitez pas à les reporter via [issues](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/issues) 
 ## Todo:
