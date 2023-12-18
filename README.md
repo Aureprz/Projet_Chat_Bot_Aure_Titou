@@ -41,17 +41,17 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 * Après le lancement du programme, vous avez le choix parmi 2 options :
 
 - ``1``
-         Vous pouvez choisir entre 5 options. Le chatbot vous répondra de manière automatique et basique.
+  Vous pouvez choisir entre 5 options. Le chatbot vous répondra de manière automatique et basique.
   
-          - ``1`` donne la liste des mots considérés comme moins importants dans l'ensemble du corpus (TF-IDF = 0)
+    - ``1`` donne la liste des mots considérés comme moins importants dans l'ensemble du corpus (TF-IDF = 0)
   
-          - ``2`` affiche les n mots dont le score TF-IDF est le plus élevé, avec n >= 1
+    - ``2`` affiche les n mots dont le score TF-IDF est le plus élevé, avec n >= 1
   
-          - ``3`` montre les mots les plus répétés par le président Chirac, hormi les plus répétés
+    - ``3`` montre les mots les plus répétés par le président Chirac, hormi les plus répétés
   
-          - ``4`` donne la liste des présidents qui ont prononcé le mot "Nation" au moins une fois
+    - ``4`` donne la liste des présidents qui ont prononcé le mot "Nation" au moins une fois
   
-          - ``5`` montre la liste des présidents ayant parlé du climat/écologie
+    - ``5`` montre la liste des présidents ayant parlé du climat/écologie
         
 
 - ``2``
