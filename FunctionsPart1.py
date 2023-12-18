@@ -77,11 +77,28 @@ def phrase_answer(text1, words):
             return sentence
     return "non mentioner"
 
-
+def humanization_answer(txt_q,phrase):
+    dictionary = {
+        "pourquoi": "Car",
+        "peux-tu": "Oui, bien sûr!",
+        "comment": "De cette manière",
+        "où": "A cet endroit",
+        "quand": "A ce moment-là",
+        "qui": "cette personne",
+        "quoi": "cette chose"
+    }
+    start = txt_q.split()[0].lower()
+    if start in dictionary.keys():
+        start = dictionary[start]
+    else:
+        start = "Oui, bien sûr!"
+    answer = start + phrase + "."
+    return answer
 def question_global(txt_q, dict_word, dict_idf_1, dict_dict_tf_idf, directory_base_):
     tf_idf_q = f_tf_idf_q(txt_q, dict_word, dict_idf_1)
     sim_max_name = file_pertinence(tf_idf_q, dict_dict_tf_idf)
     text_speach = equivalent_str(sim_max_name, directory_base_)
     words = max_score(tf_idf_q)
     phrase = phrase_answer(text_speach, words)
-    return phrase
+    answer = humanization_answer(txt_q,phrase)
+    return answer

@@ -52,10 +52,10 @@ for i in list_files_path:
     text = clean(text)
     str_to_file(text, i)
 # create TF-IDF
-dic_words = dict_words(list_files_path)
+dict_word = dict_words(list_files_path)
 for file_path in list_files_path:
-    dict_dict_TF[os.path.basename(file_path)] = term_frequency(dic_words, file_path)
-dict_idf = inverse_document_frequency(dic_words, dict_dict_TF)
+    dict_dict_TF[os.path.basename(file_path)] = term_frequency(dict_word, file_path)
+dict_idf = inverse_document_frequency(dict_word, dict_dict_TF)
 dict_dict_tf_idf = tf_idf(dict_idf, dict_dict_TF)
 
 
@@ -69,4 +69,6 @@ while True:
     if answer == "1":
         print("noting")
     else:
-        print("Answer not defined.")
+        txt_q = input("print a question ?")
+        print(question_global(txt_q,dict_word, dict_idf,dict_dict_tf_idf,directory_base)
+
