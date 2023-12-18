@@ -86,14 +86,17 @@ def scalar_product(dict_a, dict_b):
 
 def norm_vector(dict_a) -> float:
     norm = 0
-    for val in dict_a:
+    for val in dict_a.values():
         norm += val**2
     norm = sqrt(norm)
     return norm
 
 
 def cosine_similarity(product_ab, norm_a, norm_b):
-    cosine = (product_ab / (norm_b * norm_a))
+    if norm_a != 0 and norm_b != 0:
+        cosine = (product_ab / (norm_b * norm_a))
+    else:
+        cosine = 0.0
     return cosine
 
 

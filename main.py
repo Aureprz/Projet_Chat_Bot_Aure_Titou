@@ -8,8 +8,6 @@
 # importing external functions
 ########################################################################################################################
 # import os
-from Fonctions import *
-from tf_idf import *
 from FunctionsPart1 import *
 ########################################################################################################################
 # VARIABLES
@@ -62,13 +60,15 @@ dict_dict_tf_idf = tf_idf(dict_idf, dict_dict_TF)
 print("Hi. Welcome to this program. What can I do for you ?\n")
 
 while True:
-    print("0. Settings")
-    print("1. Select a type of value")
+    print("1 Question types")
+    print("2 Questions global")
     answer = input()
 
     if answer == "1":
         print("noting")
+    if answer == "2":
+        txt_q = input("posez votre question ?")
+        print(question_global(txt_q, dict_word, dict_idf, dict_dict_tf_idf, directory_base))
     else:
-        txt_q = input("print a question ?")
-        print(question_global(txt_q,dict_word, dict_idf,dict_dict_tf_idf,directory_base)
+        print("invalid answer")
     answer = ""
