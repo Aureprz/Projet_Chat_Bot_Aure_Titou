@@ -1,4 +1,4 @@
-from tf_idf import *
+    from tf_idf import *
 from Fonctions import *
 from main import *
 
@@ -29,13 +29,14 @@ def q2(dict_2_tf_idf):
     return list_words
 
 
-def q3(tf_dict):
-    with open("stop_words_french.txt", "r") as f: # ceux ne sont pas les mots non-importants (pas utile)
-        list_words = []
+def q3(dict_tf_idf, tf_dict):
+    list_not_relevant = []
+    list_words = []
+    for i in dict_tf_idf[:
     Q = func_sort(tf_dict, True)
     n = -1
     while n <= 0 or n > 50:
-        n = int(input("Choose how many ""important"" word do you want me give you :"))
+        n = int(input("Choose how many ""important"" word do you want me to give you :"))
         while len(list_words) <= n:
             for (k, val) in Q.items():
                 if k not in f:
@@ -46,22 +47,29 @@ def q3(tf_dict):
 
 def q4():
     list_names = []
-    for i in "./cleaned": # utilise plutôt list_files_path (la variable)
-        with open(i, "r") as f: # utilise plutôt file_to_str ( la fonction) et .split()
-            if "nation" in f:  # c bien
-                list_names.append(i) # nom_fichier = os.path.basename(chemin_acces)
-                # bonne chance (;
-
-    print("Here's the presidents which said the word ""Nation"" ")
+    for i in list_files_path: 
+        txt = file_to_str(i)
+        txt = txt.split()
+            if "nation" in txt: 
+                name_file = os.path.basename(i)
+                list_names.append(name_file)
+    print("Here's the presidents which said the word ""Nation"" :")
+    print(list_names)
 
 
 def q5():
-    L=[]
-
-
-def q6():
-    L=[]
-
+    list_names = []
+    list_climate_terms = ["climat", "écologie", "écologique", "climatique", "changement climatique", "développement durable"]
+    for i in list_files_path: 
+        txt = file_to_str(i)
+        txt = txt.split()
+        for j in range (list_climate_terms):
+            if list_climate_terms[j] in txt: 
+                name_file = os.path.basename(i)
+                list_names.append(name_file)
+    list_names = set(list_names)
+    print("Here's the presidents who spoke about climate in their speeche(s) :")
+    print(list_names)
 
 def f_tf_idf_q(txt, dict_word, dict_idf):
     txt_question = clean(txt)
