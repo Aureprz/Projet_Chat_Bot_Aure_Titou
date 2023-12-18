@@ -103,6 +103,9 @@ def str_to_file(chaine, file_path):
     with open(file_path, "w", encoding='utf-8') as f1:
         f1.write(chaine)
 
+def count_word(fichier_path):
+   str=file_to_str(fichier_path)
+   nb_word=len(str.split())
 
 def equivalent_str(name_file, path_directory):
     path_file = os.path.join(path_directory, name_file,)
