@@ -9,6 +9,8 @@
 ########################################################################################################################
 import os
 from FunctionsPart1 import *
+from tf_idf import *
+from Fonctions import *
 ########################################################################################################################
 # VARIABLES
 ########################################################################################################################
@@ -57,19 +59,17 @@ dict_idf = inverse_document_frequency(dict_word, dict_dict_TF)
 dict_dict_tf_idf = tf_idf(dict_idf, dict_dict_TF)
 
 list_one_to_five = ["1", "2", "3", "4", "5"]
-
-print("Hi. Welcome to this program. What can I do for you ?\n")
+txt_q = ""
+print("Salut. Bienvenue dans ce programme. Que puis-je faire pour vous ?\n")
 
 while True:
     print("1 - Question types")
-    print("2 - Questions globales")
+    print("2 - Questions Chat-bot")
     answer = input()
-
-
-while answer != 1 or answer != 2:
     if answer == "1":
-        answer == -1
-        while answer not in list_one_to_five:
+        answer = -1
+        while answer != "%end%":
+            print("%end% - pour quitter le programme.")
             print("1 - Afficher la liste des mots les moins importants dans le corpus de documents.")
             print("2 - Afficher le(s) mot(s) ayant le score TD-IDF le plus élevé.")
             print("3 - Indiquer le(s) mot(s) le(s) plus répété(s) par le président Chirac, sauf les mots dont le score "
@@ -78,19 +78,24 @@ while answer != 1 or answer != 2:
             print("5 - Indiquer le(s) nom(s) du/des président(s) qui a/ont parlé du climat et/ou de l’écologie.")
             answer = input()
             if answer == "1":
-                print(q1(dict_dict_tf_idf))
+                q1(dict_dict_tf_idf)
             elif answer == "2":
-                print(q2(dict_dict_tf_idf))
+                q2(dict_dict_tf_idf)
             elif answer == "3":
-                print(q3())
+                q3(dict_dict_TF, dict_idf)
             elif answer == "4":
-                print(q4())
+                q4(dict_dict_TF)
             elif answer == "5":
-                print(q5)
-    if answer == "2":
-        txt_q = input("posez votre question :")
-        print(question_global(txt_q, dict_word, dict_idf, dict_dict_tf_idf, directory_base))
+                q5(dict_pres_files)
+            else:
+                print("réponse invalide")
+    elif answer == "2":
+        print("Je suis là pour vous aider. Posez vos questions et je ferai de mon mieux pour y répondre.")
+        print("""Pour quitter, écrivez simplement "%exit%" """)
+        while txt_q != "%exit%":
+            txt_q = input("Votre question: ")
+            print(question_global(txt_q, dict_word, dict_idf, dict_dict_tf_idf, directory_base))
+        txt_q = ""
     else:
         print("réponse invalide")
     answer = ""
-

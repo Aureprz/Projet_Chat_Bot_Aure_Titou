@@ -1,17 +1,17 @@
 from tf_idf import *
 from Fonctions import *
-from main import *
-# list_files_names = list_of_files(directory_base, "txt")
 
 
 def q1(dict_tf_idf):
     list_words = []
     dict_tf_idf = f_mean(dict_tf_idf)
-    for (k, val) in dict_tf_idf["mean"].items:
+    for (k, val) in dict_tf_idf.items():
         if val == 0:
             list_words.append(k)
     print("Voici les mots considérés comme moins importants (soit leure score TF-IDF = 0) :")
-    print(list_words)
+    for word in list_words:
+        print(word, end="; ")
+    print("\n")
 
 
 def q2(dict_2_tf_idf):
@@ -19,57 +19,68 @@ def q2(dict_2_tf_idf):
     dict_tf_idf = f_mean(dict_2_tf_idf)
     dict_tf_idf = func_sort(dict_tf_idf, True)
     n = -1
-    while n <= 0 or n > 50:
-        n = int(input("choisissez combien de mots ""important"" vous souhaitez que je vous donne :"))
-        while len(list_words) <= n:
-            for (k, val) in dict_tf_idf["mean"].items:
-                list_words.append(k)
+    while n <= 0 or n > len(dict_tf_idf):
+        n = int(input("Choose how many 'important' word do you want me give you (nb<=" + str(len(dict_tf_idf)) + ") :"
+                      ))
+        list_k = list(dict_tf_idf.keys())
+        for i in range(n):
+            list_words.append(list_k[i])
     print("voici votre top", n, "des mots les plus importants à travers tous les fichiers")
-    return list_words
+    for word in list_words:
+        print(word, end="; ")
+    print("\n")
 
 
-def q3(dict_tf_idf, tf_dict):
-    list_words_not_relevant = []
-    list_words = []
-    for i in dict_tf_idf:
-        Q = func_sort(tf_dict, True)
+def q3(dict_dict_tf, dict_dict_idf):
+    nb_mot_demander = 0
+    list_files = ["Nomination_Chirac1.txt", "Nomination_Chirac2.txt"]
+    dict_words_chirac = {}
+    for name_file in list_files:
+        file_path = os.path.join("cleaned", name_file)
+        nb = count_word(file_path)
+        for k, val in dict_dict_tf[name_file].items():
+            if dict_dict_idf[k] != 0:
+                dict_words_chirac[k] = dict_words_chirac.get(k, 0) + (val * nb)
+    list_words_chirac = list(func_sort(dict_words_chirac, True).keys())
     n = -1
-    while n <= 0 or n > 50:
-        n = int(input("Choisissez combien de mots  :"))
-        while len(list_words) <= n:
-            for (k, val) in Q.items():
-                if k not in Q:
-                    list_words.append(k)
-    print("voici votre top", n, "des mots les plus répétés par le président Chirac (excepté ceux qui considérés comme"
-                                "moins importants) :")
-    return list_words
+    while n <= 0 or n > len(list_words_chirac):
+        n = int(input("Choose how many 'important' word do you want me to give you (nb<=" + str(len(list_words_chirac))
+                      + ") :"))
+    list_words_chirac = list_words_chirac[:n]
+    print("Here's your top", n, "of the most important words in Mr Chirac speech (except less relevant ones) :")
+    for word in list_words_chirac:
+        print(word, end="; ")
+    print("\n")
 
 
-def q4():
-    list_names = []
-    for i in list_files_path: 
-        txt = file_to_str(i)
-        txt = txt.split()
-        if "nation" in txt:
-            name_file = os.path.basename(i)
-            list_names.append(name_file)
-    print("Voici tous les présidents qui ont prononcé au moins une fois le mot ""nation"" :")
-    print(list_names)
+def q4(dict_dict_tf):
+    dict_names = {}
+    for name_dict in dict_dict_tf:
+        file_path = os.path.join("cleaned", name_dict)
+        nb = count_word(file_path)
+        name_president = "".join(extraire_nom([name_dict]))
+        dict_names[name_president] = dict_dict_tf[name_dict]["nation"] * nb
+    list_names = list(func_sort(dict_names, True).keys())
+    print("""Voici les présidents qui ont le plus parlé de la "nation", triés dans l'ordre décroissant:""")
+    for name in list_names:
+        print(name, end="  ")
+    print("\n")
 
 
-def q5():
-    list_names = []
-    list_climate_terms = ["climat", "écologie", "écologique", "climatique", "changement climatique", "développement durable"]
-    for i in list_files_path: 
-        txt = file_to_str(i)
-        txt = txt.split()
-        for j in range (len(list_climate_terms)-1):
-            if list_climate_terms[j] in txt: 
-                name_file = os.path.basename(i)
-                list_names.append(name_file)
-    list_names = set(list_names)
-    print("Les présidents qui ont parlé d'écologie/climat dans leur(s) discours sont :")
-    print(list_names)
+def q5(dict_pres_files):
+    list_names = set()
+    for name_files, name in dict_pres_files.items():
+        file_path = os.path.join("cleaned", name_files)
+        txt_file = file_to_str(file_path)
+        txt_file = txt_file.split()
+        if ("nation" or "climat") in txt_file:
+            list_names.add(name)
+    print("""Here's the presidents which said the word "climat" or "écologie" :""")
+    for name in list_names:
+        print(name, end="  ")
+    print("\n")
+
+
 
 def f_tf_idf_q(txt, dict_word, dict_idf):
     txt_question = clean(txt)
@@ -78,7 +89,7 @@ def f_tf_idf_q(txt, dict_word, dict_idf):
     return tf_idf_question
 
 
-def answer_sentence(text1, words):
+def phrase_answer(text1, words):
     list_sentence = text1.split(".")
     for sentence in list_sentence:
         if words in sentence:
@@ -86,9 +97,9 @@ def answer_sentence(text1, words):
     return "Non mentioné"
 
 
-def humanization_answer(txt_q,sentence, name):
+def humanization_answer(txt_q, sentence, name):
     dictionary = {
-        "pourquoi": "Car",
+        "pourquoi": "Car,",
         "peux-tu": "Oui, bien sûr !",
         "comment": "De cette manière,",
         "où": "A cet endroit,",
@@ -103,7 +114,7 @@ def humanization_answer(txt_q,sentence, name):
         return answer
     else:
         start = "Oui, bien sûr !"
-    answer = start + phrase + "."
+    answer = start + sentence + "."
     return answer
 
 
@@ -114,6 +125,6 @@ def question_global(txt_quest, dict_word1, dict_idf_1, dict_dict_tf_idf1, direct
     name_president = extraire_nom(name)[0]
     text_speach = equivalent_str(sim_max_name, directory_base_)
     words = max_score(tf_idf_q)
-    phrase = answer_sentence(text_speach, words)
+    phrase = phrase_answer(text_speach, words)
     answer = humanization_answer(txt_quest, phrase, name_president)
     return answer

@@ -70,8 +70,7 @@ def deref_dic_key(dic) -> list:  # Lets you use every key (word) with the %all% 
 
 def func_sort(dic, type_sort) -> dict:
     """Sort values within each sub-dictionary"""
-    for key in dic:
-        dic[key] = dict(sorted(dic[key].items(), key=lambda item: item[1], reverse=type_sort))
+    dic = dict(sorted(dic.items(), key=lambda item: item[1], reverse=type_sort))
     return dic
 
 
@@ -89,7 +88,6 @@ def f_mean(dic_dic) -> dict:
                 dico[word] = val
     for word, val in dico.items():
         dico[word] /= nb_doc
-    dico = {"mean": dico}
     return dico
 
 
@@ -112,6 +110,11 @@ def equivalent_str(name_file, path_directory):
     text = file_to_str(path_file)
     return text
 
+
+def count_word(files_path):
+    text = file_to_str(files_path)
+    nb_word = len(text.split())
+    return nb_word
 
 if __name__ == "__main__":
     print("Do not run this file.")
