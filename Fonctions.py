@@ -53,6 +53,11 @@ def dict_words(list_path_files) -> dict:
 
 
 def deref_dic_dic(dic_dic) -> dict:
+    """
+    la fonction qui permet de déréférencer les adresses un dictionnaire
+    :param dic_dic: dictionnaire de dictionnaires mal référencer
+    :return: un dictionnaire de dictionnaires avec les même valeurs
+    """
     dic_dic_2 = {}
     for dic in dic_dic:
         dic_dic_2[dic] = {}
@@ -61,7 +66,12 @@ def deref_dic_dic(dic_dic) -> dict:
     return dic_dic_2
 
 
-def deref_dic_key(dic) -> list:  # Lets you use every key (word) with the %all% command
+def deref_dic_key(dic) -> list:
+    """
+    la fonction qui permet de déréférencer les clefs d'un dictionnaire
+    :param dic: dictionnaire mal référencer
+    :return: list des clefs du dictionnaire
+    """
     list_key = []
     for k in dic.keys():
         list_key.append(k)
@@ -98,21 +108,35 @@ def file_to_str(file_path):
 
 
 def str_to_file(chaine, file_path):
+    """
+    Cette fonction écrit un texte dans un fichier
+    :param chaine: texte à écrire dans le fichier
+    :param file_path: chemin du fichier
+    :return: Rien
+    """
     with open(file_path, "w", encoding='utf-8') as f1:
         f1.write(chaine)
 
-def count_word(fichier_path):
-   str=file_to_str(fichier_path)
-   nb_word=len(str.split())
 
 def equivalent_str(name_file, path_directory):
+    """
+    Cette fonction permet de recupperer le text d'un fichier dans un dossier
+    :param name_file: nom du fichier
+    :param path_directory: chemin du dossier
+    :return: texte du fichier dans le dossier
+    """
     path_file = os.path.join(path_directory, name_file,)
     text = file_to_str(path_file)
     return text
 
 
-def count_word(files_path):
-    text = file_to_str(files_path)
+def count_word(file_path):
+    """
+    Cette fonction compte le nombre de mots dans un fichier
+    :param file_path: chemin du fichier
+    :return: nombre de mots dans un fichier
+    """
+    text = file_to_str(file_path)
     nb_word = len(text.split())
     return nb_word
 

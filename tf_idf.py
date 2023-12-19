@@ -1,15 +1,26 @@
 from math import log10, sqrt
 from Fonctions import *
+"""
+Regroupe les différentes fonctions en lien avec le traitement de texte
+"""
 
 
 def minuscule(txt) -> str:
-    """function transforming the text of each file into lowercase letters"""
+    """
+    Fonction transformant le texte de chaque fichier en lettres minuscules
+    :param txt: texte d'un fichier
+    :return: texte
+    """
     txt = txt.lower()
     return txt
 
 
 def punctuation(txt) -> str:
-    """ function removing each punctuation element, such as commas or hyphens, from files"""
+    """
+    fonction supprimant chaque élément de ponctuation, comme les virgules ou les traits d’union, des fichiers
+    :param txt: texte d'un fichier
+    :return: texte
+    """
     list_punctuation = [
         '.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '<', '>', "'", '"', '/',
         '|', '@', '#', '$', '%', '^', '&', '*', '_', '+', '-', '=', '~', '`', "\n", "\""
@@ -21,13 +32,12 @@ def punctuation(txt) -> str:
     return txt
 
 
-def stopword(text, list_stopword) -> str:
-    """function to remove words that appear too often (defined by a predefined list called list_stopword)"""
-    text_c = " ".join(word for word in text if word not in list_stopword)
-    return text_c
-
-
 def clean(text) -> str:
+    """
+    Regroupe les différentes étapes du traitement de texte
+    :param text: texte d'un fichier
+    :return: texte
+    """
     text = text.lower()
     text = punctuation(text)
     return text
@@ -35,7 +45,11 @@ def clean(text) -> str:
 
 def term_frequency(dict_word, path_file_txt=None, txt="") -> dict:
     """
-    TF function calculating the frequency of occurrence of a term in such file
+    Fonction TF calculant la fréquence d’apparition d’un terme dans ce fichier
+    :param dict_word: dictionnaire des mots présent dans le corpus
+    :param path_file_txt: chemin du fichier
+    :param txt: text d'un fichier
+    :return: un dictionnaire qui  associe à chaque mot du fichier un score de terme fréquence
     """
     score_tf = dict_word.copy()
     if path_file_txt is not None:
@@ -52,7 +66,13 @@ def term_frequency(dict_word, path_file_txt=None, txt="") -> dict:
 
 
 def inverse_document_frequency(dict_word, dict_dict_tf=None, dict_tf=None) -> dict:
-    """IDF function calculating the importance of a term across all existing files"""
+    """
+    Fonction IDF calculant l’importance d’un terme dans tous les fichiers existants
+    :param dict_word: dictionnaire des mots présent dans le corpus
+    :param dict_dict_tf: dictionnaire des dictionnaires TF
+    :param dict_tf: dictionnaire TF
+    :return: dictionnaire qui associe un score inverse document fréquence à chaque mot du corpus
+    """
     score_idf = dict_word.copy()
     if dict_tf is not None:
         dict_dict_tf = {"Score": dict_tf}
@@ -69,7 +89,13 @@ def inverse_document_frequency(dict_word, dict_dict_tf=None, dict_tf=None) -> di
 
 
 def tf_idf(idf, dict_dict_tf=None, dict_tf=None) -> dict:
-    """function giving us the TF-IDF matrix for all the words in the files"""
+    """
+    fonction nous donnant la matrice TF-IDF pour tous les mots dans les fichiers du corpus
+    :param idf: dictionnaire IDF
+    :param dict_dict_tf: dictionnaire de dictionnaire TF
+    :param dict_tf: dictionnaire TF
+    :return: Matrice TF-IDF (dictionnaire de dictionnaire)
+    """
     if dict_tf is not None:
         dict_dict_tf = {"Score": dict_tf}
     if dict_dict_tf is not None:
@@ -78,6 +104,12 @@ def tf_idf(idf, dict_dict_tf=None, dict_tf=None) -> dict:
 
 
 def scalar_product(dict_a, dict_b):
+    """
+    Cette fonction calcule le produit scalaire de 2 document
+    :param dict_a: dictionnaire de valeurs a
+    :param dict_b:dictionnaire de valeurs b
+    :return: produit scalaire de a et b
+    """
     product_ab = 0
     for key in dict_a.keys():
         product_ab += dict_a[key] * dict_b[key]
@@ -85,6 +117,11 @@ def scalar_product(dict_a, dict_b):
 
 
 def norm_vector(dict_a) -> float:
+    """
+    Cette fonction calcule la norm d'un dictionnaire
+    :param dict_a: dictionnaire dont on cherche la norme
+    :return: la norm du dictionnaire a
+    """
     norm = 0
     for val in dict_a.values():
         norm += val**2
@@ -93,6 +130,13 @@ def norm_vector(dict_a) -> float:
 
 
 def cosine_similarity(product_ab, norm_a, norm_b):
+    """
+    Cette fonction calcule le cosinus similarité de 2 vecteurs (dictionnaires)
+    :param product_ab: produit scalaire de a et b
+    :param norm_a: norme du dictionnaire a
+    :param norm_b: norme du dictionnaire b
+    :return: le cosinus de similarité
+    """
     if norm_a != 0 and norm_b != 0:
         cosine = (product_ab / (norm_b * norm_a))
     else:
@@ -101,6 +145,12 @@ def cosine_similarity(product_ab, norm_a, norm_b):
 
 
 def file_pertinence(dict_tf_idf_a, dict_dict_tf_idf):
+    """
+    Cette fonction cherche la pertinence d'un fichier par rapport a la question grâce au cosinus de similarité
+    :param dict_tf_idf_a: dictionnaire TF-IDF de la question
+    :param dict_dict_tf_idf: ensemble des dictionnaires TF-IDF du corpus
+    :return: Le nom du fichier avec la plus grande similarité
+    """
     dict_simil = {}
     norm_a = norm_vector(dict_tf_idf_a)
     for name, dict_tf_idf_b in dict_dict_tf_idf.items():
@@ -112,6 +162,11 @@ def file_pertinence(dict_tf_idf_a, dict_dict_tf_idf):
 
 
 def max_score(dict_tf_idf):
+    """
+    Cette fonction permettant de trouver le mot avec le score TF-IDF le plus élever dans la question
+    :param dict_tf_idf: dictionnaire TF-IDF de la question
+    :return: valeur maximum de la question
+    """
     max_tf_idf = max(dict_tf_idf, key=dict_tf_idf.get)
     return max_tf_idf
 
