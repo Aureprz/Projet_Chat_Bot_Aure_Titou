@@ -91,8 +91,8 @@ while True:
                 print("réponse invalide")
     elif answer == "2":
         print("Je suis là pour vous aider. Posez vos questions et je ferai de mon mieux pour y répondre.")
-        print("""Pour quitter, écrivez simplement "%exit%" """)
-        while txt_q != "%exit%":
+        print("""Pour quitter, écrivez simplement "%end%" """)
+        while txt_q != "%end%":
             txt_q = input("Votre question: ")
             print(question_global(txt_q, dict_word, dict_idf, dict_dict_tf_idf, directory_base))
         txt_q = ""

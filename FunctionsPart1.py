@@ -13,7 +13,7 @@ def q1(dict_tf_idf):
     dict_tf_idf = f_mean(dict_tf_idf)
     for (k, val) in dict_tf_idf.items():
         if val == 0:
-            list_words.append(k)
+            list_words.append(k)1
     print("Voici les mots considérés comme moins importants (soit leure score TF-IDF = 0) :")
     for word in list_words:
         print(word, end="; ")
