@@ -41,7 +41,7 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 * Après le lancement du programme, vous avez le choix parmi 2 options :
 
 - ``1``
-  Vous pouvez choisir entre 5 options. Le chatbot vous répondra de manière automatique et basique.
+  Vous pouvez choisir entre 5 demandes préconçus. Le chatbot vous répondra de manière automatique et basique.
   
     - ``1`` donne la liste des mots considérés comme moins importants dans l'ensemble du corpus (TF-IDF = 0)
   
@@ -57,7 +57,8 @@ Si vous rencontrez des problèmes vous pouvez faire un `pip install --upgrade pi
 - ``2``
         Le chatbot vous répondra de manière autonome, toujours dans la thématique du traitement de textes. Par exemple,  les scores TF et IDF ou la matrice TF-IDF d'un document.
 
-
+- ``%end%``
+    Vous permet de revenir en arrière
         
 ## Bug: 
 Si vous trouvez des bugs n'hésitez pas à les reporter via [issues](https://github.com/Aureprz/Projet_Chat_Bot_Aure_Titou/issues) 
