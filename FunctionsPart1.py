@@ -20,7 +20,7 @@ def q2(dict_2_tf_idf):
     dict_tf_idf = func_sort(dict_tf_idf, True)
     n = -1
     while n <= 0 or n > len(dict_tf_idf):
-        n = int(input("Choose how many 'important' word do you want me give you (nb<=" + str(len(dict_tf_idf)) + ") :"
+        n = int(input("Choose how many 'important' word do you want me to give you (nb<=" + str(len(dict_tf_idf)) + ") :"
                       ))
         list_k = list(dict_tf_idf.keys())
         for i in range(n):
@@ -47,7 +47,8 @@ def q3(dict_dict_tf, dict_dict_idf):
         n = int(input("Choose how many 'important' word do you want me to give you (nb<=" + str(len(list_words_chirac))
                       + ") :"))
     list_words_chirac = list_words_chirac[:n]
-    print("Here's your top", n, "of the most important words in Mr Chirac speech (except less relevant ones) :")
+    print("Voici votre top", n, "des mots les plus importants du discours de M.Chirac (sauf ceux qui sont moins "
+                                "pertinents):")
     for word in list_words_chirac:
         print(word, end="; ")
     print("\n")
@@ -75,7 +76,7 @@ def q5(dict_pres_files):
         txt_file = txt_file.split()
         if ("nation" or "climat") in txt_file:
             list_names.add(name)
-    print("""Here's the presidents which said the word "climat" or "écologie" :""")
+    print("""Voici les présidents qui ont dit le mot "climat" ou "écologie":""")
     for name in list_names:
         print(name, end="  ")
     print("\n")
