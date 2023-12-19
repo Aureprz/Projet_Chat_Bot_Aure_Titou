@@ -1,8 +1,14 @@
 from tf_idf import *
 from Fonctions import *
-
+"""
+Regroupe les différentes fonctions en lien avec le menu"""
 
 def q1(dict_tf_idf):
+    """
+    Cette fonction permet de trouver les mots les moins importants du corpus (score TF-IDF = 0)
+    :param dict_tf_idf: matrice TF-IDF du corpus
+    :return: rien (print les résultats)
+    """
     list_words = []
     dict_tf_idf = f_mean(dict_tf_idf)
     for (k, val) in dict_tf_idf.items():
@@ -15,6 +21,11 @@ def q1(dict_tf_idf):
 
 
 def q2(dict_2_tf_idf):
+    """
+    Cette fonction permet de tout trouver les mots importants à travers tous les fichiers
+    :param dict_2_tf_idf: matrice TF-IDF du corpus
+    :return: rien (print les résultats)
+    """
     list_words = []
     dict_tf_idf = f_mean(dict_2_tf_idf)
     dict_tf_idf = func_sort(dict_tf_idf, True)
@@ -32,6 +43,12 @@ def q2(dict_2_tf_idf):
 
 
 def q3(dict_dict_tf, dict_dict_idf):
+    """
+    Cette fonction permet de trouver les mot les plus répétés par M.Chirac
+    :param dict_dict_tf: l'ensemble des dictionnaires TF du corpus
+    :param dict_dict_idf: dictionnaire IDF du corpus
+    :return: rien (print les résultats)
+    """
     nb_mot_demander = 0
     list_files = ["Nomination_Chirac1.txt", "Nomination_Chirac2.txt"]
     dict_words_chirac = {}
@@ -55,6 +72,11 @@ def q3(dict_dict_tf, dict_dict_idf):
 
 
 def q4(dict_dict_tf):
+    """
+    Cette fonction permet de trouver les noms des présidents qui ont le plus parlé de la "nation"
+    :param dict_dict_tf: l'ensemble des dictionnaires TF du corpus
+    :return: rien (print les résultats)
+    """
     dict_names = {}
     for name_dict in dict_dict_tf:
         file_path = os.path.join("cleaned", name_dict)
@@ -69,6 +91,11 @@ def q4(dict_dict_tf):
 
 
 def q5(dict_pres_files):
+    """
+    Cette fonction permet de trouver les noms des president qui on parler du climat ou de l'écologie.
+    :param dict_pres_files: dictionnaire qui associe  le nom du fichier et le nom du président
+    :return: rien (print les résultats)
+    """
     list_names = set()
     for name_files, name in dict_pres_files.items():
         file_path = os.path.join("cleaned", name_files)
@@ -82,8 +109,14 @@ def q5(dict_pres_files):
     print("\n")
 
 
-
 def f_tf_idf_q(txt, dict_word, dict_idf):
+    """
+    Cette fonction permet de trouver la matrice TF-IDF de la question
+    :param txt: texte de la question
+    :param dict_word: dictionnaire de l'ensemble des mots des fichiers
+    :param dict_idf: dictionnaire IDF du corpus
+    :return: matrice TF-IDF de la question
+    """
     txt_question = clean(txt)
     tf_question = term_frequency(dict_word, txt=txt_question)
     tf_idf_question = tf_idf(dict_idf, dict_tf=tf_question)["Score"]
@@ -91,6 +124,12 @@ def f_tf_idf_q(txt, dict_word, dict_idf):
 
 
 def phrase_answer(text1, words):
+    """
+    Trouve la phrase réponse dans le texte du dossier le plus important
+    :param text1: texte du dossier le plus important
+    :param words: mot qui doit être présent dans la phrase réponse
+    :return: la phrase de réponse
+    """
     list_sentence = text1.split(".")
     for sentence in list_sentence:
         if words in sentence:
@@ -99,6 +138,13 @@ def phrase_answer(text1, words):
 
 
 def humanization_answer(txt_q, sentence, name):
+    """
+    Cette fonction permet de mettre en forme la réponse du Bot
+    :param txt_q: texte de la question posée par l'utilisateur
+    :param sentence: phrase réponse trouvé dans le fichier le plus important
+    :param name: nom du président du fichier le plus important
+    :return: la réponse du bot
+    """
     dictionary = {
         "pourquoi": "Car,",
         "peux-tu": "Oui, bien sûr !",
@@ -120,6 +166,15 @@ def humanization_answer(txt_q, sentence, name):
 
 
 def question_global(txt_quest, dict_word1, dict_idf_1, dict_dict_tf_idf1, directory_base_):
+    """
+    Cette fonction regroupe toutes les sous-fonctions pour donner la réponse à une question inconnue
+    :param txt_quest: texte de la question
+    :param dict_word1: dictionnaire de l'ensemble des mots des fichiers
+    :param dict_idf_1: dictionnaire IDF du corpus
+    :param dict_dict_tf_idf1: dictionnaire TF-IDF du corpus
+    :param directory_base_: dossier où sont stockés les fichiers originaux du corpus
+    :return:
+    """
     tf_idf_q = f_tf_idf_q(txt_quest, dict_word1, dict_idf_1)
     sim_max_name = file_pertinence(tf_idf_q, dict_dict_tf_idf1)
     name = [sim_max_name]

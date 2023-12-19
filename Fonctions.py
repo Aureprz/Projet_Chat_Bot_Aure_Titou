@@ -1,9 +1,15 @@
 
 import os
-
+"""
+Dossier qui regroupe l'ensemble des fonctions général
+"""
 
 def extraire_nom(list_names_files) -> list:
-    """function to extract the name of each file (speech)"""
+    """
+    fonction pour extraire le nom de chaque fichier (discours)
+    :param list_names_files: liste des noms de chaque fichier
+    :return: liste des noms des président
+    """
     list_nom = []
     for file_name in list_names_files:
         # Remove "Nomination_" and ".txt"
@@ -17,13 +23,23 @@ def extraire_nom(list_names_files) -> list:
 
 
 def noms_prenoms(dict_identity, list_noms) -> dict:
-    """function giving the list of first and last names associated with each president"""
+    """
+    fonction donnant la liste des noms et prénoms associés à chaque président
+    :param dict_identity: dictionnaire qui répertorie les noms des présidents et les prénoms associés
+    :param list_noms: liste des noms des présidents qui ont parlé
+    :return: dictionnaire qui liste les noms et les prénoms des président dans le corpus
+    """
     dict_presidents = {i: dict_identity[i] for i in list_noms}
     return dict_presidents
 
 
 def list_of_files(directory, extension) -> list:
-    """function that returns each file name entirely in the form of a list"""
+    """
+    fonction qui renvoie chaque nom de fichier entièrement sous la forme d’une liste
+    :param directory: dossier des fichiers
+    :param extension: extension des fichiers
+    :return: liste des noms de fichiers
+    """
     files_names = []
     for filename in os.listdir(directory):
         if filename.endswith(extension):
@@ -32,6 +48,12 @@ def list_of_files(directory, extension) -> list:
 
 
 def copy_directory(directory1, directory2) -> list:
+    """
+    Cette fonction permet de copier les fichiers d'un dossier vers un autre dossier
+    :param directory1: dossier de départ
+    :param directory2: dossier d'arrivée
+    :return: list des chemins des fichiers dans le dossier d'arrivée
+    """
     list_directory2 = []
     for files in os.listdir(directory1):
         with open(os.path.join(directory1, files), "r", encoding='utf-8') as f1, open(os.path.join(directory2, files),
@@ -42,7 +64,11 @@ def copy_directory(directory1, directory2) -> list:
 
 
 def dict_words(list_path_files) -> dict:
-    """function that returns a dictionary of each word, in a single copy, with a null value"""
+    """
+    fonction qui renvoie un dictionnaire de chaque mot du corpus, en une seule copie, avec une valeur nulle
+    :param list_path_files: chemins des fichiers dans le corpus
+    :return: dictionnaire des mots du corpus
+    """
     list_txt = []
     for path_files in list_path_files:
         txt = file_to_str(path_files)
@@ -79,14 +105,21 @@ def deref_dic_key(dic) -> list:
 
 
 def func_sort(dic, type_sort) -> dict:
-    """Sort values within each sub-dictionary"""
+    """
+    Trier les valeurs d'un dictionnaire
+    :param dic:
+    :param type_sort: type de trie si type_sort=True ordre décroissant et si type_sort=False ordre croissant
+    :return: renvoi un dictionnaire trié
+    """
     dic = dict(sorted(dic.items(), key=lambda item: item[1], reverse=type_sort))
     return dic
 
 
 def f_mean(dic_dic) -> dict:
     """
-    Gives the average of all values according to the word(s) chosen and the type of result selected
+    Donne la moyenne de toutes les valeurs selon le mot (s) choisi et le type de résultat sélectionné
+    :param dic_dic: dictionnaire de dictionnaires de mots associés à des valeurs numériques
+    :return: renvoie la valeur moyenne de toutes les valeurs pour un mot donné
     """
     dico = {}
     nb_doc = len(dic_dic)
@@ -101,7 +134,12 @@ def f_mean(dic_dic) -> dict:
     return dico
 
 
-def file_to_str(file_path):
+def file_to_str(file_path) -> str:
+    """
+    Cette fonction lit un fichier et récupère son contenu
+    :param file_path: chemin d'accès du fichier
+    :return: contenu du fichier en str
+    """
     with open(file_path, "r", encoding='utf-8') as f1:
         txt = f1.read()
     return txt
